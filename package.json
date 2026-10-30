@@ -1,0 +1,36 @@
+{
+  "name": "fretenow",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "workspaces": [
+    "packages/*",
+    "services/*",
+    "apps/web"
+  ],
+  "scripts": {
+    "test": "tsx --test services/api/test/*.test.ts",
+    "test:postgres": "node --env-file-if-exists=.env.local --import tsx --test services/api/test/postgres.test.ts",
+    "typecheck": "tsc --noEmit",
+    "dev:api": "node --env-file-if-exists=.env.local --import tsx --watch services/api/src/server.ts",
+    "start:api": "node --env-file-if-exists=.env.local --import tsx services/api/src/server.ts",
+    "dev:web": "npm run dev --workspace=@fretenow/web",
+    "build:web": "npm run build --workspace=@fretenow/web",
+    "typecheck:web": "npm run typecheck --workspace=@fretenow/web",
+    "start:web": "npm run start --workspace=@fretenow/web",
+    "verify:coverage": "node scripts/dev/verify-coverage.mjs"
+  },
+  "dependencies": {
+    "fastify": "5.12.7",
+    "pg": "8.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "@types/pg": "8.15.6",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  }
+}

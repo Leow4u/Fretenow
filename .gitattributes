@@ -1,0 +1,43 @@
+# Normalize source text in Git; protect approved asset and license bytes.
+* text=auto
+
+*.pdf binary
+*.zip binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.icns binary
+*.jar binary
+*.apk binary
+*.aab binary
+*.keystore binary
+*.jks binary
+*.p12 binary
+
+# Approved vectors remain diffable without newline conversion.
+*.svg -text whitespace=cr-at-eol
+
+# Shell entrypoints must run after Windows checkout too.
+gradlew text eol=lf
+*.sh text eol=lf
+*.bash text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Preserve upstream OFL bytes, including the supplied line-21 trailing space.
+# Exempt only end-of-line whitespace in these eight vendor license copies.
+docs/brand/assets/fonts/BricolageGrotesque-OFL.txt -text whitespace=-blank-at-eol
+docs/brand/assets/fonts/InstrumentSans-OFL.txt -text whitespace=-blank-at-eol
+apps/web/public/brand/BricolageGrotesque-OFL.txt -text whitespace=-blank-at-eol
+apps/web/public/brand/InstrumentSans-OFL.txt -text whitespace=-blank-at-eol
+apps/ios/licenses/BricolageGrotesque-OFL.txt -text whitespace=-blank-at-eol
+apps/ios/licenses/InstrumentSans-OFL.txt -text whitespace=-blank-at-eol
+apps/android/licenses/BricolageGrotesque-OFL.txt -text whitespace=-blank-at-eol
+apps/android/licenses/InstrumentSans-OFL.txt -text whitespace=-blank-at-eol
