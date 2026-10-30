@@ -5,10 +5,13 @@ import Observation
     private let api: any APIClient
     private var token: String?
     private(set) var account: Account?
-    private(set) var shipments: [Shipment] = [], rates: [Rate] = []
+    private(set) var shipments: [Shipment] = []
+    private(set) var rates: [Rate] = []
     private(set) var detail: Shipment?
-    private(set) var busy = false, bookingAttempted = false
-    private(set) var error: String?, bookedID: String?
+    private(set) var busy = false
+    private(set) var bookingAttempted = false
+    private(set) var error: String?
+    private(set) var bookedID: String?
     private(set) var intent: BookingIntent?
     var draft = Draft() { didSet { rates = []; bookedID = nil } }
     init(api: any APIClient) { self.api = api }
