@@ -1,0 +1,32 @@
+node_modules/
+.env
+.env.*
+!.env.example
+dist/
+.next/
+coverage/
+*.log
+*.tsbuildinfo
+**/.gradle/
+**/.kotlin/
+**/local.properties
+**/DerivedData/
+**/*.xcresult/
+*.jks
+*.keystore
+*.p12
+*.mobileprovision
+# Review snapshots and local acceptance evidence stay on disk only.
+docs/implementation/review-*.diff
+docs/implementation/task-3-before-fix.json
+# Preserve approved distribution assets; omit duplicate kit, render QA and runtime outputs.
+output/*
+!output/brandbook/
+output/brandbook/*
+!output/brandbook/FreteNow-Brandbook-v1.0.pdf
+!output/brandbook/FreteNow-Kit-de-Marca-v1.0.zip
+!output/brandbook/index.html
+!output/brandbook/applications/
+output/brandbook/applications/*
+!output/brandbook/applications/*.png
+docs/brand/work/*.pdf

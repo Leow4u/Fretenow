@@ -1,0 +1,34 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {randomUUID} from 'node:crypto';
+import {PostgresStore} from '../src/postgres.ts';
+import {createApp} from '../src/app.ts';
+
+test('PostgreSQL concurrent clients, restart persistence, tenant isolation and rollback',{skip:!process.env.DATABASE_URL},async t=>{
+ const connection=process.env.DATABASE_URL!;
+ const tenant=`test-${randomUUID()}`;const token=randomUUID();
+ const first=new PostgresStore(connection);const second=new PostgresStore(connection);
+ await first.migrate();
+ const now=new Date();const date=new Date(now.getTime()+86400000).toISOString().slice(0,10);
+ const expiresAt=new Date(now.getTime()+3600000).toISOString();
+ const headers={authorization:`Bearer ${token}`};
+ await first.createSession(token,{tenantId:tenant,expiresAt});
+ const app=createApp({store:first,mode:'demo'});const app2=createApp({store:second,mode:'demo'});
+ const draft={mode:'LTL',origin:{name:'Test origin',address:'123 Main St',city:'Austin',state:'TX',postalCode:'78701',country:'US'},destination:{name:'Test destination',address:'456 Front St',city:'Denver',state:'CO',postalCode:'80202',country:'US'},pickupDate:date,items:[{description:'Test pallet',quantity:1,weightLb:180,lengthIn:48,widthIn:40,heightIn:36}],accessorials:[]};
+ const quote=await app.inject({method:'POST',url:'/api/v1/rates',headers,payload:draft});assert.equal(quote.statusCode,200);
+ const payload={rateId:quote.json().rates[0].id,draft};
+ const results=await Promise.all(Array.from({length:10},(_,i)=>(i%2?app:app2).inject({method:'POST',url:'/api/v1/shipments',headers:{...headers,'idempotency-key':'persistent'},payload})));
+ assert.ok(results.every(r=>[200,201].includes(r.statusCode)));assert.equal(new Set(results.map(r=>r.json().id)).size,1);
+ const id=results[0].json().id;
+ await assert.rejects(first.transaction(tenant,state=>{delete state.shipments[id];throw new Error('rollback exercise');}));
+ await app.close();await app2.close();await first.close();await second.close();
+ const restarted=new PostgresStore(connection);const restartedApp=createApp({store:restarted,mode:'demo'});
+ t.after(async()=>{await restartedApp.close();await restarted.pool.query('DELETE FROM fretenow_tenants WHERE id=$1',[tenant]);await restarted.deleteSession(token);await restarted.deleteSession(`other-${token}`);await restarted.close();});
+ assert.equal((await restartedApp.inject({url:`/api/v1/shipments/${id}`,headers})).json().id,id);
+ const retry=await restartedApp.inject({method:'POST',url:'/api/v1/shipments',headers:{...headers,'idempotency-key':'persistent'},payload});assert.equal(retry.statusCode,200);assert.equal(retry.json().id,id);
+ const altered=structuredClone(payload);altered.draft.items[0].weightLb=999;
+ assert.equal((await restartedApp.inject({method:'POST',url:'/api/v1/shipments',headers:{...headers,'idempotency-key':'persistent'},payload:altered})).statusCode,409);
+ await restarted.createSession(`other-${token}`,{tenantId:`other-${tenant}`,expiresAt});
+ assert.equal((await restartedApp.inject({url:`/api/v1/shipments/${id}`,headers:{authorization:`Bearer other-${token}`}})).statusCode,404);
+ await restarted.pool.query('DELETE FROM fretenow_tenants WHERE id=$1',[`other-${tenant}`]);
+});

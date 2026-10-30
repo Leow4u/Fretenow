@@ -1,0 +1,22 @@
+{
+  "project": "FreteNow",
+  "version": "1.0",
+  "logoApproval": {
+    "source": "Mensagem do usuário nesta sessão",
+    "quote": "Gostei, pode seguir com esse logo e montar o brandbook completo da FreteNow, incluindo as aplicações na Web, iOS e Android.",
+    "date": "2026-10-30"
+  },
+  "websiteCorrection": {
+    "source": "Observação do usuário nesta sessão",
+    "url": "https://linklane.ai/",
+    "decision": "Distinguir a expressão do site público da interface do portal. Hero público inspecionado visualmente: escuro, tipografia branca, predomínio neutro.",
+    "impact": "Aplicação institucional da v1 usa base preta, marca monocromática e hierarquia editorial; portal e apps mantêm sistema azul."
+  },
+  "status": "Manual v1.0 e kit elaborados para uso/revisão. Não foi iniciada a implementação da plataforma.",
+  "artifacts": {
+    "pdf": "output/brandbook/FreteNow-Brandbook-v1.0.pdf",
+    "kit": "output/brandbook/FreteNow-Kit-de-Marca-v1.0.zip"
+  },
+  "historicalBrief": "docs/brand/brand-direction-v0.1.json",
+  "approvalBoundary": "Aprovação explícita do logo e autorização de montar o manual. Assinatura editorial e extensões do sistema foram elaboradas nesta edição; não afirmar aprovação individual de cada regra."
+}

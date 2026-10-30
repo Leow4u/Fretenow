@@ -1,0 +1,753 @@
+{
+  "schema_version": 1,
+  "brand": "FreteNow",
+  "language": "pt-BR",
+  "verified_at": "2026-10-30",
+  "scope": "Orientações para o brandbook v1 e suas aplicações visuais Web, iOS e Android.",
+  "status": "Pesquisa e diretrizes de design. Não implementa plataformas, aplicativos, arquivos nativos .icon ou recursos Android.",
+  "rule_types": {
+    "official_standard": "Critério de uma norma técnica, com nível de conformidade indicado.",
+    "official_platform_specification": "Especificação publicada pela plataforma para o recurso ou a entrega descrita.",
+    "official_platform_guidance": "Recomendação de design ou acessibilidade da plataforma; não é uma obrigação legal universal.",
+    "fretenow_decision": "Escolha interna de marca, interação ou qualidade.",
+    "fretenow_v1_proposal": "Extensão proposta nesta versão do manual; validar nas telas finais."
+  },
+  "sources": [
+    {
+      "id": "wcag22",
+      "publisher": "W3C",
+      "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "status": "W3C Recommendation, edição de 12/12/2024"
+    },
+    {
+      "id": "wcag_contrast",
+      "publisher": "W3C WAI",
+      "title": "Understanding SC 1.4.3: Contrast (Minimum)",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "status": "Explicação oficial informativa; o critério normativo está em WCAG 2.2"
+    },
+    {
+      "id": "wcag_non_text",
+      "publisher": "W3C WAI",
+      "title": "Understanding SC 1.4.11: Non-text Contrast",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html"
+    },
+    {
+      "id": "wcag_target_min",
+      "publisher": "W3C WAI",
+      "title": "Understanding SC 2.5.8: Target Size (Minimum)",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html"
+    },
+    {
+      "id": "wcag_target_enhanced",
+      "publisher": "W3C WAI",
+      "title": "Understanding SC 2.5.5: Target Size (Enhanced)",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html"
+    },
+    {
+      "id": "wcag_resize",
+      "publisher": "W3C WAI",
+      "title": "Understanding SC 1.4.4: Resize Text",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html"
+    },
+    {
+      "id": "wcag_reflow",
+      "publisher": "W3C WAI",
+      "title": "Understanding SC 1.4.10: Reflow",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html"
+    },
+    {
+      "id": "wcag_focus",
+      "publisher": "W3C WAI",
+      "title": "Understanding SC 2.4.7: Focus Visible",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html"
+    },
+    {
+      "id": "wcag_focus_not_obscured",
+      "publisher": "W3C WAI",
+      "title": "Understanding SC 2.4.11: Focus Not Obscured (Minimum)",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html"
+    },
+    {
+      "id": "wcag_status",
+      "publisher": "W3C WAI",
+      "title": "Understanding SC 4.1.3: Status Messages",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html"
+    },
+    {
+      "id": "wcag_motion",
+      "publisher": "W3C WAI",
+      "title": "Understanding SC 2.3.3: Animation from Interactions",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html"
+    },
+    {
+      "id": "w3c_motion_preference",
+      "publisher": "W3C",
+      "title": "Media Queries Level 5, prefers-reduced-motion",
+      "url": "https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-motion",
+      "status": "Working Draft de 19/02/2026; não é W3C Recommendation"
+    },
+    {
+      "id": "apple_app_icons",
+      "publisher": "Apple",
+      "title": "Human Interface Guidelines: App icons",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/app-icons",
+      "verification_note": "Regra de camadas quadradas confirmada em trecho oficial indexado."
+    },
+    {
+      "id": "apple_icon_composer",
+      "publisher": "Apple",
+      "title": "Icon Composer",
+      "url": "https://developer.apple.com/icon-composer/"
+    },
+    {
+      "id": "apple_icon_catalog",
+      "publisher": "Apple",
+      "title": "Configuring your app icon using an asset catalog",
+      "url": "https://developer.apple.com/documentation/xcode/configuring-your-app-icon",
+      "verification_note": "Opção de imagem 1024 × 1024 confirmada em trecho oficial indexado."
+    },
+    {
+      "id": "apple_icon_layers",
+      "publisher": "Apple",
+      "title": "Create icons with Icon Composer — WWDC25",
+      "url": "https://developer.apple.com/videos/play/wwdc2025/361/",
+      "verification_note": "Transcrição oficial consultada para exportação de camadas e aplicação da máscara pelo sistema."
+    },
+    {
+      "id": "apple_touch",
+      "publisher": "Apple",
+      "title": "UI Design Dos and Don'ts",
+      "url": "https://developer.apple.com/design/tips/"
+    },
+    {
+      "id": "apple_dynamic_type",
+      "publisher": "Apple",
+      "title": "Scaling fonts automatically",
+      "url": "https://developer.apple.com/documentation/uikit/scaling-fonts-automatically"
+    },
+    {
+      "id": "apple_dynamic_type_session",
+      "publisher": "Apple",
+      "title": "Get started with Dynamic Type — WWDC24",
+      "url": "https://developer.apple.com/videos/play/wwdc2024/10074/"
+    },
+    {
+      "id": "apple_larger_text_claim",
+      "publisher": "Apple",
+      "title": "Larger Text evaluation criteria",
+      "url": "https://developer.apple.com/help/app-store-connect/manage-app-accessibility/larger-text-evaluation-criteria/",
+      "status": "Critérios para declarar suporte a Larger Text na App Store"
+    },
+    {
+      "id": "apple_reduced_motion_claim",
+      "publisher": "Apple",
+      "title": "Reduced Motion evaluation criteria",
+      "url": "https://developer.apple.com/help/app-store-connect/manage-app-accessibility/reduced-motion-evaluation-criteria/",
+      "status": "Critérios para declarar suporte a Reduced Motion na App Store"
+    },
+    {
+      "id": "android_adaptive",
+      "publisher": "Google / Android Developers",
+      "title": "Adaptive icons",
+      "url": "https://developer.android.com/develop/ui/compose/system/icon_design_adaptive",
+      "document_updated_at": "2026-10-22"
+    },
+    {
+      "id": "google_play_icon",
+      "publisher": "Google / Android Developers",
+      "title": "Google Play icon design specifications",
+      "url": "https://developer.android.com/distribute/google-play/resources/icon-design-specifications",
+      "document_updated_at": "2026-10-20"
+    },
+    {
+      "id": "google_play_assets",
+      "publisher": "Google Play Console Help",
+      "title": "Add preview assets to showcase your app",
+      "url": "https://support.google.com/googleplay/android-developer/answer/9866151?hl=en-GB"
+    },
+    {
+      "id": "android_accessibility",
+      "publisher": "Google / Android Developers",
+      "title": "Make apps more accessible",
+      "url": "https://developer.android.com/guide/topics/ui/accessibility/apps",
+      "document_updated_at": "2026-10-23"
+    },
+    {
+      "id": "android_touch_defaults",
+      "publisher": "Google / Android Developers",
+      "title": "API defaults — Minimum touch target sizes",
+      "url": "https://developer.android.com/develop/ui/compose/accessibility/api-defaults"
+    },
+    {
+      "id": "android_font_scaling",
+      "publisher": "Google / Android Developers",
+      "title": "Android 14 features — Non-linear font scaling",
+      "url": "https://developer.android.com/about/versions/14/features#non-linear-font-scaling"
+    }
+  ],
+  "official_rules": [
+    {
+      "id": "contrast_text",
+      "type": "official_standard",
+      "platforms": [
+        "Web"
+      ],
+      "level": "WCAG 2.2 AA, SC 1.4.3",
+      "rule": "Texto normal e imagens de texto precisam de contraste de pelo menos 4,5:1; texto grande, pelo menos 3:1.",
+      "detail": "Grande significa pelo menos 18 pt regular ou 14 pt em negrito, aproximadamente 24 CSS px ou 18,67 CSS px. Não arredondar um resultado abaixo do limite para aprová-lo.",
+      "exceptions": "O critério exclui logotipos, decoração e texto incidental, além de controles inativos nas condições descritas pela norma. Texto funcional não recebe isenção por ser da marca.",
+      "source_ids": [
+        "wcag22",
+        "wcag_contrast"
+      ]
+    },
+    {
+      "id": "contrast_ui",
+      "type": "official_standard",
+      "platforms": [
+        "Web"
+      ],
+      "level": "WCAG 2.2 AA, SC 1.4.11",
+      "rule": "Informação visual necessária para identificar controles, seus estados e partes significativas de gráficos precisa de contraste de pelo menos 3:1 contra cores adjacentes.",
+      "detail": "A regra não exige 3:1 para toda superfície ou toda borda decorativa. Controles inativos e aparência nativa não modificada têm exceções.",
+      "source_ids": [
+        "wcag_non_text"
+      ]
+    },
+    {
+      "id": "web_target_minimum",
+      "type": "official_standard",
+      "platforms": [
+        "Web"
+      ],
+      "level": "WCAG 2.2 AA, SC 2.5.8",
+      "rule": "Alvo de ponteiro de pelo menos 24 × 24 CSS px, salvo as exceções de espaçamento, controle equivalente, conteúdo inline, controle do navegador e apresentação essencial.",
+      "detail": "Na exceção de espaçamento, círculos de 24 CSS px de diâmetro centrados nos alvos pequenos não podem cruzar outro alvo ou o círculo de outro alvo pequeno.",
+      "source_ids": [
+        "wcag_target_min"
+      ]
+    },
+    {
+      "id": "web_target_enhanced",
+      "type": "official_standard",
+      "platforms": [
+        "Web"
+      ],
+      "level": "WCAG 2.2 AAA, SC 2.5.5",
+      "rule": "O critério aprimorado usa 44 × 44 CSS px, com as exceções previstas. Esse tamanho não deve ser rotulado como mínimo AA.",
+      "source_ids": [
+        "wcag_target_enhanced"
+      ]
+    },
+    {
+      "id": "web_resize",
+      "type": "official_standard",
+      "platforms": [
+        "Web"
+      ],
+      "level": "WCAG 2.2 AA, SC 1.4.4 e 1.4.10",
+      "rule": "Permitir ampliação de texto a 200% sem perda de conteúdo ou funcionalidade. Conteúdo de rolagem vertical deve refluir em largura equivalente a 320 CSS px sem exigir rolagem em duas dimensões.",
+      "detail": "A norma possui exceções específicas, incluindo conteúdo cuja compreensão exige disposição bidimensional, como mapas e tabelas de dados.",
+      "source_ids": [
+        "wcag_resize",
+        "wcag_reflow"
+      ]
+    },
+    {
+      "id": "web_focus",
+      "type": "official_standard",
+      "platforms": [
+        "Web"
+      ],
+      "level": "WCAG 2.2 AA, SC 2.4.7 e 2.4.11",
+      "rule": "A operação por teclado precisa ter indicação de foco visível; o elemento focado não pode ficar completamente oculto por conteúdo criado pelo autor.",
+      "source_ids": [
+        "wcag_focus",
+        "wcag_focus_not_obscured"
+      ]
+    },
+    {
+      "id": "web_status",
+      "type": "official_standard",
+      "platforms": [
+        "Web"
+      ],
+      "level": "WCAG 2.2 AA, SC 4.1.3",
+      "rule": "Mensagens de status em conteúdo implementado com marcação devem poder ser identificadas programaticamente para anúncio por tecnologia assistiva sem receber foco.",
+      "source_ids": [
+        "wcag_status"
+      ]
+    },
+    {
+      "id": "ios_touch",
+      "type": "official_platform_guidance",
+      "platforms": [
+        "iOS"
+      ],
+      "rule": "A Apple orienta controles com área de toque de pelo menos 44 × 44 pontos.",
+      "detail": "Pontos iOS, CSS px e dp Android são unidades lógicas distintas. O tamanho do símbolo visível pode ser menor do que sua área interativa.",
+      "source_ids": [
+        "apple_touch"
+      ]
+    },
+    {
+      "id": "ios_dynamic_type",
+      "type": "official_platform_guidance",
+      "platforms": [
+        "iOS"
+      ],
+      "rule": "Usar estilos de texto e respeitar Dynamic Type. Fontes customizadas também podem acompanhar a preferência de tamanho.",
+      "detail": "A Apple não exige a fonte de sistema como única família. O layout deve se adaptar aos tamanhos maiores.",
+      "source_ids": [
+        "apple_dynamic_type",
+        "apple_dynamic_type_session"
+      ]
+    },
+    {
+      "id": "ios_larger_text_declaration",
+      "type": "official_platform_specification",
+      "platforms": [
+        "iOS"
+      ],
+      "rule": "Para declarar Larger Text na App Store, atender aos critérios de ampliação de pelo menos 200% ou ao máximo permitido pelo sistema e preservar leitura e uso.",
+      "detail": "É uma condição da declaração desse recurso de acessibilidade, não uma exigência de adotar uma família tipográfica específica.",
+      "source_ids": [
+        "apple_larger_text_claim"
+      ]
+    },
+    {
+      "id": "android_touch",
+      "type": "official_platform_guidance",
+      "platforms": [
+        "Android"
+      ],
+      "rule": "O Google recomenda área de toque de pelo menos 48 × 48 dp para elementos interativos.",
+      "detail": "A área interativa pode se estender além do desenho visível, sem sobrepor controles vizinhos.",
+      "source_ids": [
+        "android_accessibility",
+        "android_touch_defaults"
+      ]
+    },
+    {
+      "id": "android_text_scale",
+      "type": "official_platform_guidance",
+      "platforms": [
+        "Android"
+      ],
+      "rule": "Usar sp para tamanho do texto e altura de linha; testar a ampliação do sistema. Android 14 introduziu escala não linear de fonte até 200%.",
+      "detail": "Não usar sp para margens e espaçamentos. Não pressupor um multiplicador linear fixo para texto ampliado.",
+      "source_ids": [
+        "android_font_scaling"
+      ]
+    }
+  ],
+  "icon_guidelines": {
+    "shared_brand_decision": {
+      "type": "fretenow_decision",
+      "rule": "Usar o símbolo aprovado como elemento central; preservar proporções, espaços internos e leitura em tamanho pequeno. A assinatura horizontal fica fora do ícone de launcher.",
+      "inspection": "Revisar o símbolo em fundo claro, escuro, nas máscaras de plataforma e nas menores apresentações previstas."
+    },
+    "apple": {
+      "current_workflow": {
+        "type": "official_platform_guidance",
+        "rule": "O fluxo atual permite compor ícones em camadas no Icon Composer, ajustar materiais e aparências e integrar o arquivo de ícone ao Xcode.",
+        "detail": "A documentação atual do Icon Composer apresenta modos Default, Dark e Mono e exportação achatada para comunicação. Essa exportação de marketing não substitui automaticamente o arquivo em camadas.",
+        "source_ids": [
+          "apple_icon_composer"
+        ]
+      },
+      "shape_and_layers": {
+        "type": "official_platform_guidance",
+        "rule": "Fornecer camadas quadradas para iOS/iPadOS; o sistema aplica o recorte e os cantos. Não exportar uma máscara de retângulo arredondado ou círculo incorporada.",
+        "detail": "A Apple orienta SVG para arte vetorial e PNG para conteúdo raster ou recursos não representáveis em SVG; camadas podem preservar transparência quando necessária à composição.",
+        "source_ids": [
+          "apple_app_icons",
+          "apple_icon_layers"
+        ]
+      },
+      "raster_option": {
+        "type": "official_platform_specification",
+        "rule": "O asset catalog continua documentando uma imagem de 1024 × 1024 pixels como origem para gerar as variações de ícone em iOS/iPadOS.",
+        "detail": "Tratar 1024 × 1024 como dimensão da origem raster desse fluxo, não como descrição completa de toda entrega nativa possível.",
+        "source_ids": [
+          "apple_icon_catalog"
+        ]
+      },
+      "fretenow_deliverables": {
+        "type": "fretenow_decision",
+        "items": [
+          "Master vetorial do símbolo aprovado.",
+          "Fallback raster quadrado de 1024 × 1024 px, com fundo marinho sólido e símbolo claro, sem cantos pré-recortados.",
+          "Plano de camadas: fundo separado do símbolo; manter a essência da marca antes de aplicar efeitos.",
+          "Na implementação futura, produzir e validar o arquivo .icon e as aparências no Icon Composer/Xcode exigidos pelo projeto."
+        ],
+        "caution": "Um PNG apresentado no brandbook é uma referência de arte; não certifica, sozinho, uma entrega pronta para a App Store."
+      }
+    },
+    "android": {
+      "adaptive": {
+        "type": "official_platform_specification",
+        "layers": "Foreground e background separados; vetor é preferido, bitmap é aceito.",
+        "canvas_dp": {
+          "width": 108,
+          "height": 108
+        },
+        "guaranteed_safe_zone_dp": {
+          "width": 66,
+          "height": 66,
+          "alignment": "central"
+        },
+        "logo_size_dp": {
+          "minimum": 48,
+          "maximum": 66
+        },
+        "rule": "Manter o conteúdo essencial do símbolo dentro da região central de 66 × 66 dp. Preencher o fundo até os limites da camada e não incorporar máscara ou sombra externa.",
+        "clarification_72dp": "A documentação reserva os 18 dp externos de cada lado para recorte e efeitos. 108 − 18 − 18 = 72 dp; essa conta não substitui a área segura de 66 × 66 dp que o documento declara não recortada pelas máscaras OEM.",
+        "source_ids": [
+          "android_adaptive"
+        ]
+      },
+      "themed": {
+        "type": "official_platform_guidance",
+        "rule": "Preparar uma camada monochrome com a silhueta legível do símbolo para themed icons.",
+        "detail": "O tema passa a depender da escolha do usuário e do launcher, portanto as cores da marca podem ser substituídas. Desde Android 13 há suporte a ícones temáticos com camada monochrome; o documento atual informa tematização automática sem camada própria a partir do Android 16 QPR 2.",
+        "fretenow_choice": "Ainda entregar a camada monocromática intencional, em vez de depender da conversão automática.",
+        "source_ids": [
+          "android_adaptive"
+        ]
+      },
+      "play_store": {
+        "type": "official_platform_specification",
+        "size_px": {
+          "width": 512,
+          "height": 512
+        },
+        "format": "PNG de 32 bits",
+        "color_space": "sRGB",
+        "maximum_file_size_kb": 1024,
+        "rule": "Arquivo quadrado completo, sem máscara arredondada ou sombra externa incorporada; o Google Play aplica ambos.",
+        "detail": "O ícone da ficha da loja é uma entrega diferente do launcher adaptativo. O Play Console especifica PNG com alpha; a página de design recomenda um fundo de marca sem transparência quando possível.",
+        "source_ids": [
+          "google_play_icon",
+          "google_play_assets"
+        ]
+      },
+      "fretenow_deliverables": {
+        "type": "fretenow_decision",
+        "items": [
+          "Planos vetoriais de foreground e background em canvas lógico de 108 × 108 dp.",
+          "Camada monochrome do símbolo.",
+          "Prévia com guias de 66 dp e máscaras circular e arredondada para revisão.",
+          "PNG 512 × 512 px para Google Play com fundo sólido.",
+          "Na implementação futura, gerar recursos de launcher e validar o recorte em diferentes launchers."
+        ]
+      }
+    }
+  },
+  "fretenow_design_decisions": {
+    "accessibility_policy": {
+      "type": "fretenow_decision",
+      "rule": "Adotar WCAG 2.2 AA como objetivo da experiência Web e usar os mesmos pisos de contraste como política interna dos layouts mobile. Não declarar conformidade de um aplicativo ou site a partir de mockups.",
+      "targets": {
+        "web": "44 × 44 CSS px como padrão interno para botões e controles recorrentes; AA continua em 24 × 24 CSS px com suas exceções.",
+        "ios": "44 × 44 pt",
+        "android": "48 × 48 dp"
+      },
+      "source_ids": [
+        "wcag22",
+        "wcag_target_min",
+        "wcag_target_enhanced",
+        "apple_touch",
+        "android_accessibility"
+      ]
+    },
+    "typography": {
+      "type": "fretenow_decision",
+      "brand_and_titles": "Bricolage Grotesque para expressão de marca, títulos editoriais e títulos de produto quando a leitura e a escala forem preservadas.",
+      "web_and_editorial_body": "Instrument Sans para corpo, informações, rótulos e texto funcional Web/editorial.",
+      "ios_functional_body": "Fonte nativa do sistema, com estilos semânticos e Dynamic Type, é aceita e preferida em fluxos funcionais densos.",
+      "android_functional_body": "Fonte padrão nativa do dispositivo Android, frequentemente Roboto, com escala em sp, é aceita em fluxos funcionais.",
+      "distinction": "Manter uma família de marca em títulos é escolha FreteNow. Usar a fonte nativa no corpo mobile também é escolha FreteNow; as plataformas permitem outras famílias acessíveis.",
+      "hierarchy": "Usar tamanho, peso, espaçamento e posição para separar título, dado principal, rótulo e ajuda. Não transformar todo texto em título de marca.",
+      "scaling": "Permitir quebra de linha e crescimento dos componentes. Evitar altura fixa em texto funcional, truncamento de valores essenciais e texto rasterizado.",
+      "web_size_reference": "Corpo 16–18 CSS px e rótulos 14–16 CSS px são pontos de partida internos, sujeitos à densidade e aos testes de ampliação.",
+      "source_ids": [
+        "apple_dynamic_type",
+        "android_font_scaling",
+        "wcag_resize",
+        "wcag_reflow"
+      ]
+    },
+    "hierarchy_and_navigation": {
+      "type": "fretenow_decision",
+      "screen_order": [
+        "Título que descreve a tarefa ou o recurso",
+        "Informação principal: rota, valor, prazo ou situação",
+        "Ação principal",
+        "Ações secundárias e informações de apoio"
+      ],
+      "primary_action": "Usar uma ação primária visualmente dominante por contexto, com verbo e objeto: Cotar frete, Ver detalhes ou Enviar documento.",
+      "navigation": "Manter a mesma ordem e os mesmos nomes das áreas recorrentes. Usar ícone acompanhado de texto nas áreas principais; indicar destino atual também por forma, marca ou peso.",
+      "responsive_web": "Navegação lateral ou superior em espaço amplo; reorganizar para espaço compacto preservando rótulos e acesso por teclado.",
+      "ios": "Usar padrões nativos de navegação, retorno e barras quando o app for implementado; adaptar a marca dentro desses padrões.",
+      "android": "Usar padrões nativos de retorno e navegação; permitir adaptação entre barra inferior e navegação lateral conforme o espaço.",
+      "suggested_example_destinations": [
+        "Fretes",
+        "Cotações",
+        "Documentos",
+        "Perfil"
+      ],
+      "disclaimer": "Os nomes de áreas são exemplos de aplicação visual, não um escopo aprovado de funcionalidades."
+    },
+    "states": {
+      "type": "fretenow_decision",
+      "principle": "Comunicar cada estado com texto, símbolo ou forma, além de cor. A cor da marca não deve alterar o significado de sucesso, aviso ou erro.",
+      "action_light": {
+        "default": {
+          "fill": "#0166D9",
+          "label": "#FFFFFF"
+        },
+        "hover": {
+          "fill": "#0A5FC7",
+          "label": "#FFFFFF"
+        },
+        "pressed": {
+          "fill": "#0A1F4E",
+          "label": "#FFFFFF"
+        }
+      },
+      "focus": "Referência Web: contorno de 2 CSS px em #0A5FC7 em superfície clara, com afastamento visível. Em fundo escuro, usar #7DB8FF e um intervalo que o separe do controle. Verificar contraste contra as cores adjacentes; 2 px é escolha de desenho, não definição do mínimo AA.",
+      "selected": "Adicionar marca persistente, sublinhado, contorno ou texto Selecionado; manter o rótulo legível.",
+      "loading": "Preservar o rótulo da ação, informar progresso ou espera e impedir envios duplicados. A implementação futura deve anunciar o status à tecnologia assistiva.",
+      "empty": "Explicar a ausência de itens e indicar a próxima ação pertinente.",
+      "error": "Dizer o que ocorreu, associar a mensagem ao campo ou à ação e oferecer correção. Preservar entradas já preenchidas.",
+      "success": "Confirmar o resultado com texto objetivo e indicar o próximo passo quando existir.",
+      "disabled": "Deixar a indisponibilidade clara e explicar a condição de liberação quando útil; evitar reduzir indiscriminadamente a opacidade de todo o conteúdo.",
+      "semantic_colors_v1": {
+        "light": {
+          "success": "#146C43",
+          "warning": "#8A4B00",
+          "error": "#B42318"
+        },
+        "dark": {
+          "success": "#79D8A5",
+          "warning": "#FFD08A",
+          "error": "#FFAAA3"
+        }
+      },
+      "semantic_colors_status": "Extensões propostas para o manual v1; não substituem a paleta institucional.",
+      "source_ids": [
+        "wcag_non_text",
+        "wcag_focus",
+        "wcag_status"
+      ]
+    },
+    "dark_mode": {
+      "type": "fretenow_v1_proposal",
+      "status": "Diretriz de extensão desta v1, a validar nos layouts finais; não é inversão automática das cores.",
+      "tokens": {
+        "canvas": "#07142E",
+        "surface": "#0A1F4E",
+        "raised": "#132E63",
+        "text_primary": "#F2F4F8",
+        "text_secondary": "#C1CDE3",
+        "border_interactive": "#7084A8",
+        "accent": "#7DB8FF",
+        "link": "#7DB8FF",
+        "action_fill": "#7DB8FF",
+        "action_label": "#0A1F4E",
+        "focus": "#7DB8FF"
+      },
+      "rule": "Usar céu para ações e links sobre marinho; usar marinho nos rótulos do CTA claro. Reservar azul vivo a acentos cuja leitura não dependa de texto claro pequeno.",
+      "surfaces": "Separar níveis por superfície e espaçamento. Bordas discretas decorativas não podem ser a única pista de um controle.",
+      "theme_behavior": "Seguir a preferência do sistema como padrão; se houver seleção manual futura, torná-la compreensível e persistente.",
+      "validation": "Validar todos os pares finais, inclusive texto secundário, estados, gráficos, transparências e sobreposição em imagens. Cores amostradas sem alpha não comprovam contraste de materiais translúcidos."
+    },
+    "motion": {
+      "type": "fretenow_decision",
+      "default": "Movimento breve e funcional para comunicar resposta e continuidade; 150–250 ms é referência interna, não norma de plataforma.",
+      "reduced_motion": "Respeitar a preferência do sistema. Remover paralaxe, grandes deslocamentos, zooms, giros e movimento contínuo dispensável; manter a informação por alteração imediata ou transição discreta.",
+      "web": "Usar a preferência prefers-reduced-motion como orientação de adaptação na implementação futura.",
+      "ios": "Responder ao ajuste Reduzir Movimento e verificar os critérios oficiais antes de declarar suporte na App Store.",
+      "android": "Respeitar as preferências de animação e acessibilidade do sistema durante a implementação e os testes.",
+      "standards_note": "SC 2.3.3 é AAA. A FreteNow adota voluntariamente a redução de movimento; não a apresenta como critério AA.",
+      "source_ids": [
+        "w3c_motion_preference",
+        "wcag_motion",
+        "apple_reduced_motion_claim"
+      ]
+    },
+    "examples_and_mockups": {
+      "type": "fretenow_decision",
+      "mandatory_caption": "Aplicação visual de marca. Dados fictícios. Este mockup não é um aplicativo funcional.",
+      "fictitious_data": {
+        "reference": "FN-EXEMPLO-1042",
+        "customer": "Empresa Exemplo",
+        "route": "Campinas, SP → Ribeirão Preto, SP",
+        "value": "R$ 2.450,00",
+        "status": "Aguardando coleta",
+        "vehicle": "Veículo demonstrativo"
+      },
+      "rule": "Usar nomes, identificadores, valores e eventos de demonstração. Evitar dados de clientes, motoristas, documentos ou operações reais.",
+      "product_scope": "As telas demonstram hierarquia, identidade e estados. Não comprovam integrações, rastreamento, pagamentos, segurança, dados em tempo real ou aprovação nas lojas."
+    }
+  },
+  "contrast_evidence": {
+    "type": "calculation",
+    "method": "Luminância relativa sRGB e razão (Lmaisclara + 0,05) / (Lmaisescura + 0,05), segundo WCAG. Aprovação calculada com precisão completa; valores exibidos abaixo foram arredondados a seis casas.",
+    "source_url": "https://www.w3.org/TR/WCAG22/#dfn-contrast-ratio",
+    "opacity_assumption": "Cores sólidas e opacas, sem imagem, gradiente, transparência ou efeito de material.",
+    "checks": [
+      {
+        "foreground": "#FFFFFF",
+        "background": "#0A1F4E",
+        "ratio": 15.922212,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#FFFFFF",
+        "background": "#0177FD",
+        "ratio": 4.151518,
+        "normal_text_AA": false,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#FFFFFF",
+        "background": "#0166D9",
+        "ratio": 5.379388,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#0A5FC7",
+        "background": "#FFFFFF",
+        "ratio": 6.044046,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#0A5FC7",
+        "background": "#F2F4F8",
+        "ratio": 5.48891,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#1A1A1A",
+        "background": "#F2F4F8",
+        "ratio": 15.805769,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#0A1F4E",
+        "background": "#7DB8FF",
+        "ratio": 7.712561,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#C1CDE3",
+        "background": "#0A1F4E",
+        "ratio": 9.939426,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#F2F4F8",
+        "background": "#0A1F4E",
+        "ratio": 14.459783,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#7DB8FF",
+        "background": "#0A1F4E",
+        "ratio": 7.712561,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#7084A8",
+        "background": "#132E63",
+        "ratio": 3.474718,
+        "normal_text_AA": false,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#7084A8",
+        "background": "#0A1F4E",
+        "ratio": 4.211717,
+        "normal_text_AA": false,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#146C43",
+        "background": "#FFFFFF",
+        "ratio": 6.44999,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#8A4B00",
+        "background": "#FFFFFF",
+        "ratio": 6.802533,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#B42318",
+        "background": "#FFFFFF",
+        "ratio": 6.574289,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#79D8A5",
+        "background": "#0A1F4E",
+        "ratio": 9.233866,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#FFD08A",
+        "background": "#0A1F4E",
+        "ratio": 11.101076,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      },
+      {
+        "foreground": "#FFAAA3",
+        "background": "#0A1F4E",
+        "ratio": 8.742628,
+        "normal_text_AA": true,
+        "large_text_or_required_nontext_threshold": true
+      }
+    ],
+    "decisions": [
+      "Branco sobre azul vivo #0177FD resulta em 4,151518:1: falha para texto normal AA; não usar em rótulos pequenos de CTA.",
+      "Branco sobre action #0166D9 resulta em 5,379388:1: adequado para texto normal AA.",
+      "Texto azul #0A5FC7 sobre branco resulta em 6,044046:1: adequado para links e rótulos.",
+      "Marinho #0A1F4E sobre céu #7DB8FF resulta em 7,712561:1: par proposto para CTA em modo escuro.",
+      "Aprovação de um par de cores não equivale à conformidade de uma tela, fluxo ou aplicativo."
+    ]
+  },
+  "review_checklist": [
+    "As aplicações preservam o símbolo e as proporções do logo aprovado.",
+    "Regras oficiais e propostas FreteNow aparecem identificadas separadamente.",
+    "O contraste dos pares finais atende ao papel de texto, ícone, estado ou controle.",
+    "Controles têm alvos lógicos de 44 CSS px como padrão Web, 44 pt iOS e 48 dp Android.",
+    "Layouts acomodam texto ampliado e mantêm nomes, valores e ações essenciais legíveis.",
+    "Foco e seleção aparecem sem depender apenas de cor.",
+    "Estado de erro possui explicação e correção; status pode ser anunciado na implementação futura.",
+    "Ícone Apple quadrado não contém máscara de cantos incorporada; camadas e fallback são entregas distintas.",
+    "Ícone Android mantém conteúdo essencial em 66 dp centrais e possui plano monocromático.",
+    "Ícone de Google Play é PNG32 de 512 px; não é confundido com o launcher adaptativo.",
+    "Modo escuro e redução de movimento foram considerados nas aplicações.",
+    "Todos os mockups incluem dados fictícios e a legenda de aplicação visual."
+  ],
+  "remaining_blockers": []
+}

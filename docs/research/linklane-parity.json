@@ -1,0 +1,763 @@
+{
+  "generatedAt": "2026-10-30",
+  "reference": "https://app.linklane.ai",
+  "sourceFile": "linklane-full-findings.json",
+  "sourceSha256": "d7a09a867bc6b9897dc71d9e30020a2fe2447d6228878cc0cdaed611766ef203",
+  "objective": "Reprodução do LinkLane inteiro em Web, iOS e Android; usar Build iOS Apps na implementação iOS",
+  "sourceScope": "Todos os módulos identificados no portal acessível: navegação autenticada, fluxos, JavaScripts e APIs. Não é uma recuperação do código privado do servidor.",
+  "platforms": [
+    "web",
+    "ios",
+    "android"
+  ],
+  "modules": [
+    {
+      "id": "onboarding",
+      "name": "Acesso e onboarding",
+      "routes": [
+        "/welcome"
+      ],
+      "features": [
+        "Sessão autenticada por cookie e pedido de link de acesso por email.",
+        "Cinco etapas de boas-vindas: nome, avisos, empresa, local de coleta e faturamento. Usuários externos/equipe podem ter fluxo reduzido.",
+        "Enriquecimento de empresa por domínio ou nome; local de coleta opcional e endereço de cobrança obrigatório no fluxo completo."
+      ],
+      "liveEvidence": "Fluxo inicial documentado anteriormente; regras condicionais lidas no bundle.",
+      "limits": [
+        "Entrega do email de acesso e autorização do servidor para cada papel não foram testadas."
+      ],
+      "sources": [
+        "onboarding",
+        "roles"
+      ],
+      "implementation": {
+        "web": "not_started",
+        "ios": "not_started",
+        "android": "not_started"
+      }
+    },
+    {
+      "id": "home",
+      "name": "Home e central de pendências",
+      "routes": [
+        "/"
+      ],
+      "features": [
+        "Visões All, Needs you, On the road e Delivered; busca global de embarques.",
+        "Checklist de cartão, locais e equipe; tarefas que exigem resposta e emails recebidos.",
+        "Book again deriva rotas anteriores/importadas e dá acesso a recorrências."
+      ],
+      "liveEvidence": "Navegação autenticada, estado vazio e APIs GET observados.",
+      "limits": [
+        "Sem embarques nesta conta, cards de movimentação e decisões foram estudados pelo código."
+      ],
+      "sources": [
+        "home",
+        "dataSource"
+      ],
+      "implementation": {
+        "web": "not_started",
+        "ios": "not_started",
+        "android": "not_started"
+      }
+    },
+    {
+      "id": "shipping",
+      "name": "Cotação e contratação",
+      "routes": [
+        "/ship",
+        "/ship/rates",
+        "/ship/details",
+        "/ship/confirm",
+        "/ship/confirmed/[id]"
+      ],
+      "features": [
+        "LTL com densidade/classe, dimensões, serviços nos pontos e seguro; FTL com equipamento; Expedited com veículos e solicitação assistida.",
+        "Texto de PO/email é enviado a /api/extract para preencher o rascunho; GET ZIP/places ajuda a resolver endereços.",
+        "Taxas instantâneas usam POST /api/v1/rates; modos/equipamentos fora dessa regra usam POST /api/v1/quote-requests.",
+        "Fluxo de confirmação exige tarifa válida, endereços/contatos e condições de pagamento; o último passo cria o embarque por POST /api/v1/shipments."
+      ],
+      "liveEvidence": "LTL e FTL cotados com carga de exemplo; detalhes vistos; confirmação analisada sem contratar.",
+      "limits": [
+        "Nenhuma contratação nem solicitação assistida enviada. O caso FTL de 5.235/403 está no relatório específico."
+      ],
+      "sources": [
+        "shipping",
+        "rates",
+        "confirmation"
+      ],
+      "implementation": {
+        "web": "not_started",
+        "ios": "not_started",
+        "android": "not_started"
+      }
+    },
+    {
+      "id": "shipments",
+      "name": "Embarques e detalhes operacionais",
+      "routes": [
+        "/shipments",
+        "/shipments/[id]"
+      ],
+      "features": [
+        "Filtros All, Active, Needs attention, Delivered e Claims; pesquisa e navegação ao detalhe.",
+        "Estado operacional evolui por booked, finding_carrier, carrier_assigned, at_pickup, picked_up, in_transit, delayed, at_delivery, delivered, pod_received, invoiced e paid; cancelamento tem estado próprio.",
+        "Detalhe reúne transportadora, origem/destino, prazos, rastreamento, preço, documentos, cobranças extras e histórico.",
+        "Ações incluem reagendar, ampliar janela, cancelar, responder a decisões e questionar cobranças extras. O código calcula custo de cancelamento/TONU conforme estado e proximidade da coleta."
+      ],
+      "liveEvidence": "Todos os filtros exercitados; estado de ID inexistente verificado com um identificador sentinela.",
+      "limits": [
+        "Não existem registros reais nesta conta para validar transições, cancelamentos ou decisões no servidor."
+      ],
+      "sources": [
+        "shipments",
+        "detail",
+        "dataSource"
+      ],
+      "implementation": {
+        "web": "not_started",
+        "ios": "not_started",
+        "android": "not_started"
+      }
+    },
+    {
+      "id": "tracking",
+      "name": "Rastreamento, compartilhamento e avisos",
+      "routes": [
+        "/shipments/[id]"
+      ],
+      "features": [
+        "Mapa usa Leaflet carregado sob demanda, rotas/pings e camadas OSM/Esri; distingue telemetria real de estado pendente.",
+        "Get a driver link envia shipmentId ao backend e devolve mensagem/URL; fresh invalida o link anterior segundo a interface.",
+        "Seguidores podem receber apenas rastreamento ou rastreamento e avisos de entrega, sem preço e documentos segundo a UI.",
+        "Histórico de eventos do embarque é carregado ao abrir a seção; contatos e preferências definem sete tipos de aviso por email/SMS."
+      ],
+      "liveEvidence": "Implementação recuperada; depende de embarque real.",
+      "limits": [
+        "Não foram gerados links reais, enviados avisos, coletada localização nem comprovada entrega de SMS/email."
+      ],
+      "sources": [
+        "detail",
+        "settings"
+      ],
+      "implementation": {
+        "web": "not_started",
+        "ios": "not_started",
+        "android": "not_started"
+      }
+    },
+    {
+      "id": "analytics",
+      "name": "Analytics e exportação",
+      "routes": [
+        "/analytics"
+      ],
+      "features": [
+        "Períodos de 30, 91 e 365 dias; agregações por rota, modo e transportadora.",
+        "Spent considera embarques concluídos; total agrega frete, fee e adicionais aplicados/negociados.",
+        "Indicadores de pontualidade e comparação com mercado aparecem quando há dados elegíveis. Saldo vem do resumo de pagamentos.",
+        "CSV de embarques inclui rota, modal, equipamento, transportadora, datas, pontualidade e valores; CSV de faturas inclui embarque, referência, estado, data e valor. Geração ocorre no navegador."
+      ],
+      "liveEvidence": "Períodos e dois botões CSV exercitados.",
+      "limits": [
+        "Downloads foram disparados e cancelados pelo REA; os arquivos finais não foram baixados/validados. Cálculos com registros reais não foram exercitados."
+      ],
+      "sources": [
+        "analytics"
+      ],
+      "implementation": {
+        "web": "not_started",
+        "ios": "not_started",
+        "android": "not_started"
+      }
+    },
+    {
+      "id": "documents",
+      "name": "Documentos",
+      "routes": [
+        "/documents",
+        "/shipments/[id]/bol",
+        "/shipments/[id]/pod"
+      ],
+      "features": [
+        "Rate confirmation, Bill of lading, Proof of delivery e Invoice; filtro Missing e agrupamento por embarque.",
+        "Disponibilidade vem dos flags docs e etapas operacionais: booking, pickup, delivery e auditoria/faturamento.",
+        "Parte dos PDFs é montada no navegador com jsPDF a partir do modelo de embarque. No detalhe, BOL/POD com trackingToken podem abrir uma rota própria do embarque.",
+        "Download individual e agregado são condicionados à disponibilidade."
+      ],
+      "liveEvidence": "Seis filtros e estado vazio exercitados; lógica de geração lida.",
+      "limits": [
+        "Não havia documento real disponível; existência de botão/gerador não comprova recebimento de arquivo oficial do transportador."
+      ],
+      "sources": [
+        "documents",
+        "detail"
+      ],
+      "implementation": {
+        "web": "not_started",
+        "ios": "not_started",
+        "android": "not_started"
+      }
+    },
+    {
+      "id": "payments",
+      "name": "Pagamentos e crédito",
+      "routes": [
+        "/payments"
+      ],
+      "features": [
+        "Resumo de saldo e faturas vencidas/pagas/retidas deriva dos embarques e seus estados financeiros.",
+        "Pagamento usa ação type:pay do embarque; cadastro de cartão inicia sessão de cobrança e redireciona para URL retornada pelo backend. A UI identifica Stripe.",
+        "Pedido de Net-14 coleta razão social, endereço, email, volume e observação; termos pending/approved alteram os métodos disponíveis.",
+        "Confirmação verifica existência de instrumento de pagamento e aceite de termos antes de habilitar contratação."
+      ],
+      "liveEvidence": "Due/Paid/All e formulário de crédito abertos sem envio; APIs de leitura observadas.",
+      "limits": [
+        "Nenhum cartão, pedido de crédito ou pagamento foi enviado. Processamento e conciliação reais não foram validados."
+      ],
+      "sources": [
+        "payments",
+        "confirmation"
+      ],
+      "implementation": {
+        "web": "not_started",
+        "ios": "not_started",
+        "android": "not_started"
+      }
+    },
+    {
+      "id": "claims",
+      "name": "Sinistros e acompanhamento",
+      "routes": [
+        "/claims",
+        "/shipments/[id]/claim",
+        "/claims/[id]"
+      ],
+      "features": [
+        "Elegibilidade para embarques entregues/pós-entrega sem claimRecord.",
+        "Wizard de três etapas: What happened, Photos and value e Review; exige descrição, quantidade afetada, observação no recibo, descoberta, situação da mercadoria, valor, documentos e contato.",
+        "Fotos são reduzidas no navegador; limite inicial de seis no wizard e até doze no caso. O código oferece anexar foto, enviar nota e retirar sinistro.",
+        "Estados incluem filed, acknowledged, under_review, offered, paid e denied, além de withdrawnOn; há cálculo de prazos implementados e texto de declaração."
+      ],
+      "liveEvidence": "Filtros e elegibilidade vazia observados; wizard/caso recuperados do JavaScript.",
+      "limits": [
+        "Não foi criado sinistro nem enviado material. Prazos são comportamento implementado no app, sem avaliação jurídica. Anexação efetiva de PDF merece validação: o componente guarda o nome dos arquivos não-imagem."
+      ],
+      "sources": [
+        "claims",
+        "claimCase",
+        "claimRules"
+      ],
+      "implementation": {
+        "web": "not_started",
+        "ios": "not_started",
+        "android": "not_started"
+      }
+    },
+    {
+      "id": "settings",
+      "name": "Configurações, equipe e importação",
+      "routes": [
+        "/settings"
+      ],
+      "features": [
+        "Equipe interna versus outside shipper; papel externo tem menu e acesso de tela reduzidos no frontend.",
+        "Locais guardam endereço, doca, horário, contato, instruções, agendamento e tipo de estabelecimento.",
+        "Import past loads lê CSV/TSV/TXT, mapeia cabeçalhos por API/modelo com fallback em regras e prévia. A confirmação adiciona locais e modelos de rota; não cria embarques históricos nesse componente.",
+        "Notificações oferecem sete eventos por email/texto, contatos e consentimento SMS; atraso é descrito como aviso obrigatório ao solicitante.",
+        "Billing contém método, frequência, email e referência obrigatória; Company contém nomes, telefone, endereço e rótulo de referência. Alguns campos persistem ao editar."
+      ],
+      "liveEvidence": "Team, Locations, Notifications, Billing e Company observados; convite e novo local abertos/cancelados.",
+      "limits": [
+        "Nenhum convite enviado, importação confirmada, preferência ou cadastro alterado. Restrições de acesso do servidor não foram auditadas por troca de papel."
+      ],
+      "sources": [
+        "settings",
+        "roles",
+        "dataSource"
+      ],
+      "implementation": {
+        "web": "not_started",
+        "ios": "not_started",
+        "android": "not_started"
+      }
+    },
+    {
+      "id": "schedules",
+      "name": "Recorrência de embarques",
+      "routes": [
+        "/schedules",
+        "/schedules/new"
+      ],
+      "features": [
+        "Criação a partir de rota já usada ou importada; dias da semana, primeira coleta e prazo.",
+        "Estado active/paused/ended; pausar, retomar, encerrar, alterar ou pular ocorrências.",
+        "Interface descreve bloqueio de alteração às 17h do dia anterior; helper determina ocorrências open/locked/skipped.",
+        "Persistência remota usa PUT /api/v1/schedules. Materialização local de embarques é desabilitada no modo remote, indicando execução remota fora do navegador."
+      ],
+      "liveEvidence": "Lista e guarda de formulário sem rota anterior observados; regras recuperadas do código.",
+      "limits": [
+        "Nenhuma recorrência criada. Job remoto de geração, preço retido e execução de coletas não foram observados."
+      ],
+      "sources": [
+        "schedules",
+        "home",
+        "dataSource"
+      ],
+      "implementation": {
+        "web": "not_started",
+        "ios": "not_started",
+        "android": "not_started"
+      }
+    },
+    {
+      "id": "price-match",
+      "name": "Comparação de proposta concorrente",
+      "routes": [
+        "/ship/beat"
+      ],
+      "features": [
+        "Envio de proposta concorrente por formulário/encaminhamento; promessa exibida de superar em 5% com condições de validade.",
+        "Histórico distingue under review, offer ready, offer ended e declined.",
+        "Envio usa multipart/FormData em /api/v1/price-matches; respostas podem informar valor de oferta e dados para preencher cotação."
+      ],
+      "liveEvidence": "Formulário e histórico vazio observados; GET da API validado.",
+      "limits": [
+        "Nenhuma proposta enviada nem aceita; validação comercial e extração no servidor não foram exercitadas."
+      ],
+      "sources": [
+        "priceMatch",
+        "rates"
+      ],
+      "implementation": {
+        "web": "not_started",
+        "ios": "not_started",
+        "android": "not_started"
+      }
+    }
+  ],
+  "apiContracts": [
+    {
+      "method": "GET",
+      "path": "/api/auth/session",
+      "purpose": "Sessão e acesso",
+      "evidence": "live"
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/link",
+      "purpose": "Pedir link de acesso",
+      "evidence": "static"
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/signout",
+      "purpose": "Sair",
+      "evidence": "static"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/auth/session",
+      "purpose": "Nome/boas-vindas",
+      "evidence": "static"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/snapshot",
+      "purpose": "Estado agregado",
+      "evidence": "live"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/account",
+      "purpose": "Conta",
+      "evidence": "live"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/shipments",
+      "purpose": "Embarques",
+      "evidence": "live"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/shipments",
+      "purpose": "Contratação",
+      "evidence": "static"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/shipments/next",
+      "purpose": "Próximo identificador",
+      "evidence": "static"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/shipments/{id}/actions",
+      "purpose": "Pagar, cancelar, reagendar e outras ações",
+      "evidence": "static"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/shipments/{id}/events",
+      "purpose": "Histórico de eventos",
+      "evidence": "static"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/claims",
+      "purpose": "Sinistros",
+      "evidence": "live"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/claims/eligible",
+      "purpose": "Elegibilidade",
+      "evidence": "live"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/claims",
+      "purpose": "Abrir sinistro",
+      "evidence": "static"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/claims/{id}/{notes|photos|withdraw}",
+      "purpose": "Ações do sinistro",
+      "evidence": "static"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/actions",
+      "purpose": "Ações registradas",
+      "evidence": "live"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/watchers",
+      "purpose": "Seguidores",
+      "evidence": "live"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/watchers",
+      "purpose": "Enviar acesso de acompanhamento",
+      "evidence": "static"
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/watchers?shipmentId=…&id=…",
+      "purpose": "Remover seguidor",
+      "evidence": "static"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/settings",
+      "purpose": "Configurações",
+      "evidence": "live"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/settings",
+      "purpose": "Salvar configurações",
+      "evidence": "static"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/reach",
+      "purpose": "Contatos de avisos",
+      "evidence": "static"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/invites",
+      "purpose": "Convidar usuário",
+      "evidence": "static"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/schedules",
+      "purpose": "Recorrências",
+      "evidence": "live"
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/schedules",
+      "purpose": "Criar/alterar recorrência",
+      "evidence": "static"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/rates",
+      "purpose": "Cotação instantânea",
+      "evidence": "prior-live"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/quote-requests",
+      "purpose": "Cotação assistida",
+      "evidence": "static"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/billing/card",
+      "purpose": "Preparar cadastro de cartão",
+      "evidence": "static"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/billing/terms",
+      "purpose": "Pedir crédito",
+      "evidence": "static"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/home/needs",
+      "purpose": "Pendências",
+      "evidence": "live"
+    },
+    {
+      "method": "GET",
+      "path": "/api/inbound/email",
+      "purpose": "Entradas de email",
+      "evidence": "live"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/join",
+      "purpose": "Oferta de associação",
+      "evidence": "live"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/join-requests",
+      "purpose": "Pedidos de associação",
+      "evidence": "live"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/join",
+      "purpose": "Solicitar associação",
+      "evidence": "static"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/join-requests",
+      "purpose": "Responder associação",
+      "evidence": "static"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/price-matches",
+      "purpose": "Histórico de propostas",
+      "evidence": "live"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/price-matches",
+      "purpose": "Enviar proposta",
+      "evidence": "static"
+    },
+    {
+      "method": "POST",
+      "path": "/api/tracking/driver-link",
+      "purpose": "Gerar/renovar link do motorista",
+      "evidence": "static"
+    },
+    {
+      "method": "POST",
+      "path": "/api/extract",
+      "purpose": "Interpretar PO/email",
+      "evidence": "static"
+    },
+    {
+      "method": "POST",
+      "path": "/api/import/map",
+      "purpose": "Mapear arquivo importado",
+      "evidence": "static"
+    },
+    {
+      "method": "GET",
+      "path": "/api/companies/enrich",
+      "purpose": "Enriquecer empresa",
+      "evidence": "static"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/zips/{zip}",
+      "purpose": "Resolver ZIP",
+      "evidence": "prior-live"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/places?q=…&near=…",
+      "purpose": "Buscar endereço",
+      "evidence": "static"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/places/{id}",
+      "purpose": "Detalhe do endereço",
+      "evidence": "static"
+    }
+  ],
+  "dataModel": {
+    "snapshot": [
+      "account",
+      "shipments",
+      "claims",
+      "actions",
+      "watchers",
+      "settings",
+      "schedules"
+    ],
+    "shipment": [
+      "id",
+      "mode",
+      "equipment",
+      "origin/destination e endereços",
+      "pickup/deliverBy",
+      "freight/reference",
+      "carrier/carrierBooking",
+      "status/steps/events",
+      "price/details.accessorials",
+      "docs",
+      "tracking/map.telematics",
+      "notices/watchers",
+      "claimRecord"
+    ],
+    "settings": [
+      "invites",
+      "locations",
+      "prefs",
+      "billing",
+      "company",
+      "reach",
+      "importedLanes"
+    ],
+    "rate": [
+      "id/source/carrier",
+      "carrierRate/fee",
+      "equipment",
+      "transit/deliverByISO",
+      "validUntilISO",
+      "marketRate",
+      "recommended/why"
+    ],
+    "claim": [
+      "shipmentId",
+      "type/quantity/description",
+      "photos/invoiceFiles",
+      "value/contact",
+      "status/notes",
+      "filedOn/resolvedOn/withdrawnOn"
+    ],
+    "schedule": [
+      "id/status",
+      "lane e carga",
+      "days/firstPickup/endsOn",
+      "held quote",
+      "skips/changes"
+    ]
+  },
+  "sourceRefs": {
+    "onboarding": {
+      "file": "formatted/3r-nxlnfcc69n.js",
+      "line": 25,
+      "anchor": "/api/companies/enrich"
+    },
+    "home": {
+      "file": "formatted/234ptwylukql7.js",
+      "line": 132,
+      "anchor": "/api/v1/home/needs"
+    },
+    "shipping": {
+      "file": "formatted/2fuwf9nvwwhlv.js",
+      "line": 109,
+      "anchor": "\"ShipForm\""
+    },
+    "rates": {
+      "file": "formatted/14h-4umu4ouwa.js",
+      "line": 29,
+      "anchor": "function j("
+    },
+    "confirmation": {
+      "file": "formatted/1iyi-q22enfu9.js",
+      "line": 353,
+      "anchor": "\"ConfirmView\""
+    },
+    "shipments": {
+      "file": "formatted/1xv3pmkjed_q9.js",
+      "line": 83,
+      "anchor": "\"/shipments\""
+    },
+    "detail": {
+      "file": "formatted/01bwdlfep_-t7.js",
+      "line": 100,
+      "anchor": "\"Get a driver link\""
+    },
+    "analytics": {
+      "file": "formatted/2w1991phav02l.js",
+      "line": 20,
+      "anchor": "\"30 days\""
+    },
+    "documents": {
+      "file": "formatted/3082xn6y32g3i.js",
+      "line": 31,
+      "anchor": "\"Rate confirmation\""
+    },
+    "payments": {
+      "file": "formatted/0wnjp9f8j36t5.js",
+      "line": 53,
+      "anchor": "function P()"
+    },
+    "claims": {
+      "file": "formatted/053gykgazi_9d.js",
+      "line": 47,
+      "anchor": "\"What happened\""
+    },
+    "claimCase": {
+      "file": "formatted/2qg5ambx_c9wm.js",
+      "line": 60,
+      "anchor": "function f("
+    },
+    "claimRules": {
+      "file": "formatted/2z52fz89xr1h6.js",
+      "line": 533,
+      "anchor": "\"claimProblems\""
+    },
+    "settings": {
+      "file": "formatted/0f_n5w__nrxcr.js",
+      "line": 207,
+      "anchor": "function O("
+    },
+    "schedules": {
+      "file": "formatted/3irwdi1afqvqx.js",
+      "line": 54,
+      "anchor": "\"Run this lane on a schedule\""
+    },
+    "priceMatch": {
+      "file": "formatted/1e-5l0h4gkcoc.js",
+      "line": 57,
+      "anchor": "\"Beat a quote\""
+    },
+    "dataSource": {
+      "file": "formatted/23_fbihf3u4--.js",
+      "line": 763,
+      "anchor": "snapshot: \"/api/v1/snapshot\""
+    },
+    "roles": {
+      "file": "formatted/23_fbihf3u4--.js",
+      "line": 577,
+      "anchor": "\"externalMayOpen\""
+    }
+  },
+  "limits": [
+    "Não há código privado do backend, banco de dados, workers, logs de integração ou console administrativo.",
+    "Interfaces e papéis não presentes nesta sessão não foram acessados por contorno de autenticação.",
+    "Não foram feitas contratação, pagamento, pedido de crédito, convite, envio de aviso, geração de link real de motorista, criação de sinistro ou recorrência.",
+    "Bibliotecas de framework/PDF/mapa foram inventariadas quando referenciadas; análise semântica do REA permanece parcial por minificação e resolução dinâmica.",
+    "Capturas marcam alguns eventos indisponíveis; cobertura HTTP/ações é descrita por transação. Não se assume completude universal da rede."
+  ]
+}

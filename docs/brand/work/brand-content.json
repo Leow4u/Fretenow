@@ -1,0 +1,431 @@
+{
+  "metadata": {
+    "title": "FreteNow — conteúdo editorial do brandbook",
+    "version": "1.0",
+    "date": "2026-10-30",
+    "locale": "pt-BR",
+    "status": "Diretrizes editoriais para composição do brandbook; logo existente aprovado pelo usuário.",
+    "scope": "Estratégia, linguagem, imagens, aplicações e governança. Os exemplos orientam a marca; não comprovam recursos implementados, operação comercial ou aplicativos publicados.",
+    "sourceNotes": [
+      "A direção visual v0.1 foi usada como contexto de confiança, clareza, controle, agilidade e proximidade. Seu registro de logo não aprovado é histórico e foi superado pela aprovação informada nesta tarefa.",
+      "A especificação multiplataforma descreve uma proposta de produto para Web, iOS e Android. Este conteúdo não altera essa especificação nem autoriza mudança de terminologia, moeda ou unidades do produto.",
+      "Referência interna: LinkLane inspirou a sensação de organização e calma. Não integra o nome, a identidade pública, a assinatura ou uma relação comercial declarada da FreteNow."
+    ]
+  },
+  "essence": {
+    "title": "Clareza que orienta",
+    "statement": "A FreteNow deve tornar o próximo passo compreensível. A marca organiza a atenção: o que está acontecendo, o que precisa de decisão e quais condições devem ser consideradas.",
+    "body": "Fretes envolvem pessoas, informações e escolhas que mudam ao longo da operação. Nossa direção de marca parte desse cotidiano. Uma hierarquia legível, uma mensagem precisa e um estado bem explicado ajudam a reduzir dúvidas. A sensação desejada é de trabalho organizado: informação suficiente para agir, espaço para compreender e uma presença próxima quando algo exige atenção.",
+    "experiencePrinciples": [
+      "Começar pelo que a pessoa precisa saber ou fazer agora.",
+      "Dar contexto ao preço, ao prazo e ao estado de uma operação.",
+      "Expor pendências e incertezas com a mesma clareza dos resultados.",
+      "Preservar a compreensão quando o conteúdo passa do computador para o celular."
+    ]
+  },
+  "purpose": {
+    "title": "Dar clareza às decisões de frete",
+    "statement": "Aproximar pessoas das informações de que precisam para organizar o transporte e decidir com atenção às condições de cada operação.",
+    "interpretation": "Este propósito orienta a comunicação e as escolhas de experiência. Ele se traduz em textos que explicam, interfaces que destacam prioridades e materiais que ajudam a compreender responsabilidades. A marca deve demonstrar utilidade por meio de detalhes concretos: um termo explicado, uma data identificada como previsão ou uma orientação que permita retomar uma tarefa."
+  },
+  "positioning": {
+    "title": "Tecnologia para decisões de frete mais claras",
+    "status": "Diretriz editorial proposta; não constitui declaração de funcionalidades disponíveis.",
+    "territory": "Organização e compreensão da gestão de fretes.",
+    "audienceNeed": "Entender opções, condições e próximos passos sem perder o contexto da operação.",
+    "statement": "A FreteNow orienta sua marca para quem precisa lidar com decisões de frete no trabalho. Sua comunicação deve reunir objetividade, contexto e uma presença calma, com atenção às diferenças entre uma intenção, uma solicitação e um resultado confirmado.",
+    "howToDemonstrate": [
+      "Apresentar informação em uma sequência que acompanhe a decisão.",
+      "Usar exemplos verificáveis em vez de superlativos.",
+      "Explicar condições relevantes perto do ponto de escolha.",
+      "Mostrar a origem e a atualidade de informações operacionais quando disponíveis."
+    ],
+    "claimRule": "Uma capacidade só entra em materiais públicos depois de sua disponibilidade e alcance serem verificados. Uma meta de produto permanece descrita como proposta ou objetivo."
+  },
+  "audiences": {
+    "title": "Pessoas que precisamos compreender",
+    "status": "Públicos propostos para orientar a comunicação; segmentação a validar com pesquisa e uso real.",
+    "groups": [
+      {
+        "name": "Quem organiza a operação",
+        "examples": "Profissionais responsáveis por preparar cargas, consultar condições e acompanhar solicitações.",
+        "need": "Identificar pendências, conferir dados e localizar a próxima ação.",
+        "communication": "Instruções curtas, rótulos específicos e contexto junto à tarefa."
+      },
+      {
+        "name": "Quem coordena e decide",
+        "examples": "Gestores e responsáveis por processos de transporte em empresas embarcadoras.",
+        "need": "Compreender o cenário e avaliar alternativas, exceções e responsabilidades.",
+        "communication": "Sínteses com critérios explícitos, períodos definidos e detalhes acessíveis."
+      },
+      {
+        "name": "Quem confere documentos e valores",
+        "examples": "Equipes administrativas e financeiras envolvidas na operação.",
+        "need": "Relacionar referências, documentos, condições e situações de cobrança.",
+        "communication": "Vocabulário preciso, valores identificados e distinção entre pendência e confirmação."
+      },
+      {
+        "name": "Quem participa do transporte",
+        "examples": "Transportadores e outros parceiros, quando houver uma relação efetiva com a FreteNow.",
+        "need": "Entender o escopo de sua participação e os dados necessários para cada etapa.",
+        "communication": "Orientações diretas, responsabilidades claras e identificação da origem de cada informação."
+      }
+    ],
+    "inclusion": "Escrever para diferentes níveis de familiaridade com tecnologia e logística. Explicar siglas na primeira ocorrência e evitar presumir cargo, gênero ou porte de empresa."
+  },
+  "values": {
+    "title": "Valores visíveis no comportamento",
+    "items": [
+      {
+        "name": "Clareza",
+        "meaning": "Facilitar a compreensão do que importa.",
+        "behavior": "Dar nomes específicos às ações e explicar uma condição no momento em que ela afeta a escolha.",
+        "example": "Usar “Revise os dados da carga” quando a tarefa é conferir informações.",
+        "avoid": "Rótulos vagos como “Prosseguir” em decisões com consequências diferentes."
+      },
+      {
+        "name": "Confiança",
+        "meaning": "Falar com precisão sobre o que se sabe.",
+        "behavior": "Identificar previsões, mostrar pendências e corrigir uma informação quando seu estado mudar.",
+        "example": "Distinguir “Solicitação recebida” de “Embarque confirmado”.",
+        "avoid": "Tratar uma resposta intermediária como sucesso definitivo."
+      },
+      {
+        "name": "Controle",
+        "meaning": "Dar contexto para escolhas conscientes.",
+        "behavior": "Expor o efeito de uma ação e permitir a revisão dos dados antes da confirmação, quando o fluxo oferecer essa etapa.",
+        "example": "Apresentar as condições aplicáveis junto à decisão de confirmar.",
+        "avoid": "Esconder ressalvas relevantes em texto distante da ação."
+      },
+      {
+        "name": "Agilidade",
+        "meaning": "Ajudar a encontrar o próximo passo com menos esforço.",
+        "behavior": "Priorizar a ação relevante e retirar palavras que não ajudam a decidir.",
+        "example": "Começar uma orientação pela pendência que precisa ser resolvida.",
+        "avoid": "Criar urgência artificial ou prometer velocidade sem evidência."
+      },
+      {
+        "name": "Proximidade",
+        "meaning": "Tratar o trabalho e o tempo das pessoas com respeito.",
+        "behavior": "Reconhecer uma dificuldade, explicar o que aconteceu e indicar uma alternativa disponível.",
+        "example": "“Não foi possível carregar os dados. Tente novamente.”",
+        "avoid": "Culpar a pessoa por uma falha ou usar humor em situações sensíveis."
+      },
+      {
+        "name": "Responsabilidade",
+        "meaning": "Manter coerência entre a comunicação e a situação real.",
+        "behavior": "Revisar números, condições, imagens e afirmações antes de divulgar um material.",
+        "example": "Identificar dados de demonstração e retirar do anúncio um recurso ainda indisponível.",
+        "avoid": "Usar depoimentos, parceiros ou indicadores sem base verificável."
+      }
+    ]
+  },
+  "personality": {
+    "title": "Presença calma, trabalho claro",
+    "traits": [
+      {
+        "name": "Segura",
+        "expression": "Frases afirmativas, termos exatos e uma hierarquia que transmite organização.",
+        "limit": "Reconhecer o que ainda depende de confirmação."
+      },
+      {
+        "name": "Prática",
+        "expression": "Conteúdo ligado à tarefa, exemplos úteis e ações fáceis de identificar.",
+        "limit": "Preservar detalhes necessários à decisão."
+      },
+      {
+        "name": "Próxima",
+        "expression": "Linguagem cotidiana, respeito e atenção ao contexto de quem trabalha.",
+        "limit": "Manter sobriedade em atrasos, cobranças, cancelamentos e ocorrências."
+      },
+      {
+        "name": "Atenta",
+        "expression": "Datas, estados e condições apresentados com cuidado.",
+        "limit": "Evitar excesso de alertas e destaque sem prioridade real."
+      }
+    ],
+    "creativeTest": "Ao revisar uma peça, perguntar: a pessoa entende o assunto, identifica o próximo passo e percebe quais condições ainda precisam ser confirmadas?"
+  },
+  "voice": {
+    "title": "Direta, calma e útil",
+    "core": "A voz permanece reconhecível em todos os canais. O tom acompanha a situação: acolhedor na apresentação, objetivo na tarefa e cuidadoso em falhas ou ocorrências.",
+    "rules": [
+      "Começar pela informação principal. Preferir frases curtas e verbos específicos.",
+      "Falar com a pessoa usando “você” quando necessário; evitar repetir o pronome em cada frase.",
+      "Usar “FreteNow” ou “nós” em conteúdo institucional. Em interfaces, privilegiar a tarefa.",
+      "Explicar termos técnicos quando o público precisar deles; preservar a precisão da operação.",
+      "Reservar exclamações para situações pontuais. Evitar caixa alta, excesso de emojis e urgência artificial.",
+      "Em erros, informar o problema e o próximo passo disponível. Em confirmações, nomear exatamente o que foi concluído."
+    ],
+    "pairsNote": "Os exemplos abaixo são propostas de redação. Cada mensagem só deve ser usada quando a condição indicada corresponder ao estado real do produto.",
+    "beforeAfter": [
+      {
+        "context": "Apresentação de condições",
+        "before": "O melhor frete, pelo menor preço, sempre!",
+        "after": "Consulte as condições para o seu frete.",
+        "reason": "Substitui uma garantia sem comprovação por uma ação clara.",
+        "useWhen": "Existir uma consulta de condições disponível."
+      },
+      {
+        "context": "Validação de formulário",
+        "before": "Você informou os dados errados.",
+        "after": "Informe o CEP completo para continuar.",
+        "reason": "Mostra o ajuste necessário e mantém o foco na tarefa.",
+        "useWhen": "O campo exigir CEP e a validação tiver identificado preenchimento incompleto."
+      },
+      {
+        "context": "Sessão expirada",
+        "before": "Erro 401: token inválido.",
+        "after": "Sua sessão expirou. Entre novamente para continuar.",
+        "reason": "Traduz a condição técnica e explica a ação necessária.",
+        "useWhen": "A expiração de sessão estiver confirmada."
+      },
+      {
+        "context": "Previsão de entrega",
+        "before": "Sua carga chega amanhã, sem falta.",
+        "after": "Entrega prevista para [data]. A previsão pode mudar conforme a operação.",
+        "reason": "Identifica a natureza da data e preserva a incerteza operacional.",
+        "useWhen": "Houver uma previsão válida; substituir [data] por uma data explícita."
+      },
+      {
+        "context": "Lista sem resultados",
+        "before": "Ops, nada por aqui :(",
+        "after": "Nenhum embarque neste período. Altere os filtros para consultar outras datas.",
+        "reason": "Explica o resultado e oferece um caminho útil.",
+        "useWhen": "A consulta tiver terminado e existirem filtros por período."
+      },
+      {
+        "context": "Consulta em andamento",
+        "before": "Aguarde um momento...",
+        "after": "Consultando as condições do frete…",
+        "reason": "Explica qual atividade está em andamento.",
+        "useWhen": "A consulta estiver efetivamente em processamento."
+      },
+      {
+        "context": "Pagamento pendente",
+        "before": "Pagamento realizado!",
+        "after": "Solicitação de pagamento enviada. A confirmação ainda está pendente.",
+        "reason": "Distingue o envio da solicitação do resultado financeiro.",
+        "useWhen": "O envio estiver confirmado e a confirmação do pagamento ainda não tiver sido recebida."
+      },
+      {
+        "context": "Decisão de cancelamento",
+        "before": "Tem certeza?",
+        "after": "Cancelar este embarque? Revise as condições de cancelamento antes de confirmar.",
+        "reason": "Nomeia a decisão e chama atenção para suas condições.",
+        "useWhen": "O cancelamento estiver disponível e as condições puderem ser consultadas."
+      }
+    ]
+  },
+  "naming": {
+    "title": "Um nome, uma escrita",
+    "preferred": "FreteNow",
+    "rule": "Escrever em uma palavra, com F e N maiúsculos. Manter essa forma em títulos, parágrafos, assuntos de e-mail e nomes de perfil.",
+    "examples": [
+      "Conheça a FreteNow.",
+      "Diretrizes de marca FreteNow.",
+      "Equipe FreteNow."
+    ],
+    "avoid": [
+      "Frete Now",
+      "Fretenow",
+      "FreteNOW",
+      "FRETE NOW",
+      "FN como substituição pública recorrente do nome"
+    ],
+    "technicalException": "Identificadores técnicos podem exigir outra capitalização. Eles não definem a escrita editorial da marca.",
+    "logoRule": "O nome em texto acompanha a tipografia do material. O logo é um arquivo de marca: usar a versão aprovada e preservar seu desenho; não redigitar o wordmark para reconstruí-lo."
+  },
+  "optionalTagline": {
+    "label": "Proposta editorial opcional",
+    "text": "Frete, com clareza.",
+    "rationale": "Resume o território da marca em uma frase curta, com ênfase na compreensão da operação.",
+    "usage": "Pode ser explorada em aberturas institucionais e peças de apresentação. Sua adoção como assinatura recorrente exige registro em uma versão futura das diretrizes.",
+    "limits": "Não integra o logo aprovado, não deve ser anexada ao wordmark e não substitui informações sobre serviços, condições ou disponibilidade."
+  },
+  "messaging": {
+    "title": "Mensagens que cabem no cotidiano",
+    "institutional": [
+      "Clareza para o próximo passo.",
+      "Decisões de frete começam com boas informações.",
+      "Cada operação merece atenção aos detalhes.",
+      "Informação clara. Decisão consciente."
+    ],
+    "supportingCopy": "Conheça a direção da FreteNow: organizar informações, explicar condições e ajudar a compreender os próximos passos do frete.",
+    "callsToAction": [
+      "Conheça a FreteNow",
+      "Veja os detalhes",
+      "Revise as informações",
+      "Consulte as condições"
+    ],
+    "notificationExample": {
+      "title": "Atualização disponível",
+      "body": "Há uma atualização no embarque [referência]. Abra para consultar os detalhes.",
+      "condition": "Usar apenas após um evento real e com acesso autorizado ao detalhe. [referência] é um placeholder, não um identificador real."
+    },
+    "claimBoundaries": "Não afirmar menor preço, economia percentual, entrega garantida, cobertura nacional, disponibilidade imediata, atendimento 24 horas ou segurança absoluta sem evidência e escopo verificáveis. A palavra “Now” faz parte do nome; não estabelece um prazo de serviço."
+  },
+  "imagery": {
+    "title": "Mostrar o trabalho com atenção",
+    "photography": {
+      "direction": "Retratar situações plausíveis do transporte: preparação de volumes, conferência de informações, organização de um armazém e pessoas em atividade. A imagem deve ajudar a entender o contexto.",
+      "look": "Luz natural ou suave, cores equilibradas e composição organizada. Reservar áreas com pouco ruído para texto e logo. Tons frios podem conversar com a paleta sem transformar toda a fotografia em um filtro azul.",
+      "people": "Representar diferentes pessoas e funções com postura natural. Conferir consentimento de uso e adequação da cena, incluindo equipamentos de proteção quando o contexto os exigir.",
+      "avoid": "Velocidade artificial, efeitos de corrida, montagens de risco, poses exageradas e cenários que sugiram uma frota própria ou uma estrutura operacional não confirmada."
+    },
+    "illustration": {
+      "direction": "Usar formas geométricas simples, volumes de carga, percursos e agrupamentos para explicar conceitos. Trabalhar com a paleta FreteNow e detalhes suficientes para compreender a cena.",
+      "composition": "Preferir poucos elementos, perspectiva consistente e espaço livre. O símbolo da marca permanece preservado; caixas e percursos ilustrados não devem gerar novos logos.",
+      "data": "Mapas, rotas, gráficos e telas ilustrativas devem indicar “Demonstração” quando apresentarem dados fictícios.",
+      "avoid": "Reproduzir ilustrações de outras marcas, inventar selos ou usar uma rota ilustrada como prova de cobertura."
+    },
+    "iconography": {
+      "direction": "Adotar uma família coerente, com espessura, proporções e cantos consistentes. Priorizar formas reconhecíveis para ações e objetos do cotidiano.",
+      "usage": "Associar ícones a rótulos quando o significado puder gerar dúvida. Conferir a leitura no tamanho de uso e em fundos claros e escuros.",
+      "status": "Estados precisam de texto. Cor e ícone reforçam a informação; azul continua ligado à marca e às ações, e não deve sozinho significar sucesso.",
+      "platforms": "Ícones de controles do sistema podem seguir a biblioteca nativa de iOS ou Android. Preservar o significado e a hierarquia ao adaptar a forma."
+    }
+  },
+  "cobranding": {
+    "title": "Relações claras entre marcas",
+    "principle": "Uma composição com outra marca deve explicar a relação existente e preservar a identidade de cada participante.",
+    "rules": [
+      "Usar os arquivos autorizados de cada marca e respeitar suas orientações de aplicação.",
+      "Manter logos separados, com respiro e peso visual equilibrado. Não fundir símbolos, nomes ou cores em uma nova marca.",
+      "Identificar a relação em linguagem simples, como “Conteúdo produzido com [marca]”, apenas quando essa relação for verdadeira e estiver autorizada.",
+      "Em material da FreteNow, a hierarquia deve deixar clara a autoria. Em ações conjuntas, combinar a hierarquia antes da produção.",
+      "Não acrescentar “parceiro oficial”, “certificado”, “integrado” ou expressão equivalente sem comprovação e autorização de uso.",
+      "Usar referências a lojas de aplicativos apenas em contexto compatível com a disponibilidade real. Aplicar o material oficial correspondente quando houver publicação."
+    ],
+    "internalReference": "LinkLane é uma referência interna de experiência. Não aplicar seu logo ao lado de FreteNow nem apresentá-la como parceira, integrante do grupo ou endossante."
+  },
+  "applications": {
+    "title": "Uma marca em diferentes pontos de contato",
+    "sharedRule": "Manter o nome, a voz e as prioridades de informação. Adaptar a composição ao suporte, preservando legibilidade, contexto e espaço para a ação principal.",
+    "platformNote": "Web, iOS e Android são aplicações previstas da identidade. As orientações e mensagens desta seção não comprovam aplicativos disponíveis nem alteram a especificação funcional. Os exemplos em português servem ao brandbook; a localização do produto exige decisão própria.",
+    "web": {
+      "direction": "Usar títulos que situem a tarefa e textos de apoio próximos ao conteúdo relevante. Em áreas densas, agrupar informações e preservar uma ação principal reconhecível.",
+      "copy": "Botões devem nomear ações; links devem antecipar o destino. Mensagens de estado precisam continuar compreensíveis fora da cor e do ícone.",
+      "example": "Título: “Revise as informações”. Apoio: “Confira os dados antes de confirmar.” Aplicar quando houver uma etapa de revisão."
+    },
+    "ios": {
+      "direction": "Manter a identidade com tipografia legível, cor e conteúdo, respeitando os controles e padrões de navegação do sistema. Ajustar textos para tamanhos de fonte ampliados.",
+      "copy": "Usar títulos curtos e ações específicas. Mensagens importantes devem caber em uma leitura contínua, sem depender de texto cortado ou de uma notificação isolada.",
+      "example": "Ação: “Ver detalhes”. Estado: “Atualização pendente”. Usar somente quando esse estado existir."
+    },
+    "android": {
+      "direction": "Preservar a mesma hierarquia e o mesmo sentido dos conteúdos, usando controles adequados à plataforma. Conferir espaçamento, ampliação de fonte e navegação em telas menores.",
+      "copy": "Manter os mesmos termos para a mesma entidade e o mesmo estado nas três plataformas. Ajustar extensão e posição do texto para o componente utilizado.",
+      "example": "Falha: “Não foi possível carregar os dados.” Ação: “Tentar novamente”. Usar quando a tentativa puder ser repetida."
+    },
+    "documents": {
+      "direction": "Em propostas, relatórios e apresentações, usar capa objetiva, título específico, data e versão. Organizar o conteúdo por decisões e informações; reservar notas para condições e fontes.",
+      "template": "Capa: “FreteNow — [título do documento]”. Identificação: “[data] · Versão [número]”. Rodapé: “FreteNow · [título curto] · [página]”.",
+      "examples": "Materiais de apresentação usam [empresa exemplo], [referência] e [data] como campos editáveis. Dados financeiros ilustrativos recebem a indicação “Demonstração”.",
+      "care": "Não usar uma peça de marca como substituta de um documento operacional ou de suas condições. Conferir números e versão antes de distribuir."
+    },
+    "email": {
+      "direction": "Assunto específico, informação principal no primeiro parágrafo e uma ação central quando necessária. A assinatura deve ocupar pouco espaço e funcionar com imagens bloqueadas.",
+      "example": {
+        "subject": "FreteNow — material de apresentação",
+        "body": "Olá, [nome].\nSegue o material de apresentação da FreteNow. O documento reúne a direção da marca e exemplos de aplicação.\nAtenciosamente,\n[nome da equipe]",
+        "signature": "[nome] · [função]\nFreteNow\ncontato@example.com"
+      },
+      "care": "O endereço example.com e os campos entre colchetes são exemplos. Substituir apenas por canais e pessoas autorizados; testar links e leitura no celular."
+    },
+    "social": {
+      "direction": "Uma ideia por peça. Destacar um título curto, uma mensagem útil e uma chamada coerente com o destino. Manter o logo legível e fora de áreas de corte.",
+      "example": {
+        "headline": "Uma boa decisão começa pela conferência.",
+        "caption": "Origem, destino e dados da carga merecem atenção antes de avançar. Revisar as informações ajuda a compreender as condições de cada operação.\nFreteNow.",
+        "imageDescription": "Composição ilustrada com volumes de carga e uma lista de conferência, em azul-marinho e azul sobre fundo claro."
+      },
+      "care": "Revisar a peça no formato final e incluir descrição alternativa quando o canal permitir. Capturas de tela devem usar dados sintéticos identificados e refletir a disponibilidade real do que anunciam."
+    }
+  },
+  "governance": {
+    "title": "Coerência que se mantém no uso",
+    "principle": "Uma diretriz é útil quando a equipe consegue localizar a versão correta e entender por que ela existe. Manter os arquivos de marca, os modelos e as decisões editoriais em um local de referência.",
+    "roles": [
+      {
+        "role": "Responsável pela marca",
+        "responsibility": "Consolidar arquivos, registrar alterações de identidade e resolver exceções de aplicação."
+      },
+      {
+        "role": "Responsável pelo conteúdo",
+        "responsibility": "Revisar escrita, tom, nomes, exemplos e coerência entre canais."
+      },
+      {
+        "role": "Responsável pelo produto ou pela operação",
+        "responsibility": "Confirmar disponibilidade de recursos, alcance de afirmações e correspondência entre mensagens e estados reais."
+      }
+    ],
+    "workflow": [
+      "Partir do arquivo e do modelo vigentes.",
+      "Produzir a peça com conteúdo e dados adequados ao público.",
+      "Conferir identidade, linguagem e legibilidade no tamanho final.",
+      "Validar as afirmações operacionais com quem responde por elas.",
+      "Registrar a versão, a data e as alterações relevantes antes de distribuir."
+    ],
+    "checklist": [
+      "O nome está escrito FreteNow, em uma palavra, com F e N maiúsculos?",
+      "O logo usa o arquivo aprovado, preservando desenho e proporções?",
+      "A pessoa identifica o assunto e o próximo passo?",
+      "Preço, prazo, disponibilidade e cobertura têm base e condições verificadas?",
+      "Cotação, solicitação, confirmação e realização estão diferenciadas?",
+      "O conteúdo identifica previsões e pendências com clareza?",
+      "O texto continua compreensível sem depender apenas de cor ou ícone?",
+      "Fotos, fontes, ícones e marcas de terceiros têm uso autorizado?",
+      "Os exemplos usam dados sintéticos ou placeholders, sem dados pessoais reais?",
+      "O material evita sugerir parceria, certificação ou publicação ainda inexistente?",
+      "Os links e contatos foram conferidos, e a peça foi revisada no tamanho final?",
+      "A versão e o responsável pela revisão estão registrados?"
+    ],
+    "maintenance": "Revisar estas diretrizes quando houver mudança de identidade, confirmação de novos recursos ou aprendizado recorrente com usuários. Guardar o histórico das decisões e retirar modelos desatualizados do conjunto de uso corrente."
+  },
+  "editorialPagePlan": {
+    "note": "Sugestão de organização do conteúdo em oito páginas editoriais, além das páginas técnicas de identidade e dos exemplos visuais do brandbook.",
+    "pages": [
+      {
+        "page": 1,
+        "title": "Essência e propósito",
+        "sections": ["essence", "purpose", "positioning"]
+      },
+      {
+        "page": 2,
+        "title": "Pessoas e comportamento",
+        "sections": ["audiences", "values"]
+      },
+      {
+        "page": 3,
+        "title": "Personalidade, voz e nome",
+        "sections": ["personality", "voice.core", "voice.rules", "naming", "optionalTagline"]
+      },
+      {
+        "page": 4,
+        "title": "A voz em situações reais",
+        "sections": ["voice.beforeAfter", "messaging"]
+      },
+      {
+        "page": 5,
+        "title": "Imagens e relações de marca",
+        "sections": ["imagery", "cobranding"]
+      },
+      {
+        "page": 6,
+        "title": "Web, iOS e Android",
+        "sections": ["applications.sharedRule", "applications.platformNote", "applications.web", "applications.ios", "applications.android"]
+      },
+      {
+        "page": 7,
+        "title": "Documentos, e-mail e social",
+        "sections": ["applications.documents", "applications.email", "applications.social"]
+      },
+      {
+        "page": 8,
+        "title": "Governança e revisão",
+        "sections": ["governance"]
+      }
+    ]
+  }
+}

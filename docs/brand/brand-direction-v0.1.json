@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-30",
+  "project": "FreteNow",
+  "status": "Exploração de identidade; conceito inicial, não aprovado",
+  "userDirection": "Transmitir a mesma sensação da LinkLane",
+  "reference": {
+    "site": "https://app.linklane.ai/",
+    "css": "https://app.linklane.ai/_next/static/immutable/chunks/3bap3snm-9w2l.css",
+    "cssSha256": "b8f70e8750e1c3ab71b967ec8fd258af5da01ad60fed0b8293d0ca320df8e75c",
+    "evidence": "C:/Users/leona/.codex/tools/rea/verification/fretenow-brandbook/reference-style-evidence.json",
+    "screenshots": [
+      "C:/Users/leona/.codex/tools/rea/verification/linklane-app/01-home.jpg",
+      "C:/Users/leona/.codex/tools/rea/verification/linklane-quote-example/02-ltl-rates-recommended.jpg"
+    ]
+  },
+  "interpretation": {
+    "desiredFeel": [
+      "confiança",
+      "clareza",
+      "controle",
+      "agilidade",
+      "proximidade"
+    ],
+    "visualLanguage": "Navegação azul-marinho, ações azuis, superfícies claras, espaço entre informações, tipografia legível e formas discretamente arredondadas",
+    "voice": "Direto, calmo, útil e sem exageros"
+  },
+  "referenceTokens": {
+    "navy": "#0A1F4E",
+    "railTop": "#26375A",
+    "railBottom": "#1F2F4F",
+    "blue": "#0177FD",
+    "action": "#0166D9",
+    "blueText": "#0A5FC7",
+    "sky": "#7DB8FF",
+    "page": "#F2F4F8",
+    "white": "#FFFFFF",
+    "bodyText": "#1A1A1A",
+    "displayFont": "Bricolage Grotesque",
+    "bodyFont": "Instrument Sans"
+  },
+  "firstConcept": {
+    "tool": "Built-in ImageGen",
+    "image": "C:/Users/leona/.codex/generated_images/01a18a74-2c2a-70e2-af3e-c35de2633f96/exec-c35488db-8687-42a9-ae5d-d313f70fa684.png",
+    "intent": "Caixa geométrica sugerindo F; Frete em azul-marinho e Now em azul vivo",
+    "type": "Prévia raster para decisão; não vetor final nem fonte tipográfica garantida",
+    "prompt": "Use case: logo-brand.\nCreate one polished initial logo concept for the logistics software brand \"FreteNow\", to review with its founder before a brandbook is finalized.\nSingle clean horizontal logo lockup, centered with generous negative space on a uniform very light cool gray background #F2F4F8. This is a single logo presentation, not a collage, mood board, guidelines sheet, device mockup, or website.\nDesired feeling: the calm confidence, clarity, friendliness and organized efficiency of a modern freight management application. Professional and approachable, compact and practical. No aggressive speed effects or flashy futuristic styling.\nSymbol: a compact distinctive geometric freight/package mark, subtly combining the structure of a parcel with a forward-moving route or F construction. Simple flat shapes, deliberate negative space, readable at small sizes. Main colors deep navy #0A1F4E, vivid blue #0177FD and a restrained sky-blue #7DB8FF accent. No gradients, shadows, texture or 3D.\nWordmark: exact text \"FreteNow\", capital F and N, one word. Friendly confident contemporary sans-serif with the slightly characterful broad shapes of Bricolage Grotesque, balanced with the clarity of Instrument Sans. Excellent optical spacing. \"Frete\" in deep navy and \"Now\" in vivid blue, consistent weight and baseline. Symbol approximately the cap height to slightly taller, placed left of the wordmark.\nNo extra words, no slogan, no captions, no registered/trademark symbol, no alternate logos, no extra panels. Keep the whole mark spacious and elegantly balanced. Crisp vector-like edges in this raster concept."
+  },
+  "pending": [
+    "Feedback do usuário sobre símbolo e wordmark",
+    "Refinamento e versão vetorial final",
+    "Variações, área de proteção, tamanhos mínimos, contraste e usos incorretos",
+    "Aplicações Web/iOS/Android e documentos",
+    "Consolidação do brandbook"
+  ]
+}
