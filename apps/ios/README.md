@@ -1,6 +1,6 @@
 # FreteNow iOS demo
 
-iOS 17+, SwiftUI Observation, per-tab NavigationStack, injected async URLSession service, Codable HTTP contract. Local demo only: no real freight, payments or notifications. This Windows workspace cannot compile Apple frameworks. Source/tests/configuration are prepared for macOS and are **not claimed to have passed Xcode**.
+iOS 17+, SwiftUI Observation, per-tab NavigationStack, injected async URLSession service, Codable HTTP contract. Local demo only: no real freight, payments or notifications. This Windows workspace cannot compile Apple frameworks. Local Windows checks do not establish Xcode success; remote build and XCTest results are recorded in [PR #1](https://github.com/Leow4u/Fretenow/pull/1) and its CI runs.
 
 On a Mac with Xcode 16.4 and an available iOS 18.5 simulator:
 
@@ -11,7 +11,7 @@ xcrun simctl list devices available
 xcodebuild test -project FreteNow.xcodeproj -scheme FreteNow -configuration Debug -destination 'platform=iOS Simulator,id=YOUR_AVAILABLE_UDID' -derivedDataPath build -resultBundlePath build/TestResults.xcresult CODE_SIGNING_ALLOWED=NO
 ```
 
-CI pins macos-15/Xcode 16.4, generates with XcodeGen 2.44.1, selects an available iPhone on the compatible iOS 18.5 runtime and uploads xcresult and simulator app. It is configured, not remotely executed. No certificate, provisioning profile, Apple account or publishing permissions are required for simulator testing.
+CI pins macos-15/Xcode 16.4, generates with XcodeGen 2.44.1, selects an available iPhone on the compatible iOS 18.5 runtime and uploads xcresult and simulator app. The workflow runs for the published PR; inspect the current run before claiming a successful build or test result. No certificate, provisioning profile, Apple account or publishing permissions are required for simulator testing.
 
 Run PostgreSQL and the shared API on that same Mac following the root contract instructions. Debug uses `http://localhost:4100`, with `NSAllowsLocalNetworking` only in Debug. No global arbitrary-load ATS override. The Windows API loopback address is not the Mac's loopback. Physical devices need an authorized remote HTTPS API or tunnel later. No automatic LAN exposure is configured. Release plist has a deliberately unreachable HTTPS placeholder and no ATS relaxation; set an authorized HTTPS API only when production identity/providers have been implemented.
 

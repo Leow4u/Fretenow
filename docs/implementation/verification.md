@@ -1,6 +1,6 @@
 # Verificação do primeiro incremento
 
-Data: 2026-10-30. Base local `95fd5c5`; implementação ainda sem commit/push. Este documento consolida evidência já executada pelos responsáveis; a Task4 não repetiu builds pesados após mudanças apenas documentais. Os resultados abaixo são históricos e têm limites explícitos.
+Data: 2026-10-30. Registro histórico da validação local, inicialmente baseada em `95fd5c5`. A publicação e os resultados remotos posteriores estão no [PR #1](https://github.com/Leow4u/Fretenow/pull/1) e nos [runs do CI](https://github.com/Leow4u/Fretenow/actions). Este documento consolida evidência já executada pelos responsáveis; a Task4 não repetiu builds pesados após mudanças apenas documentais. Os resultados abaixo são históricos e têm limites explícitos.
 
 | Verificação executada | Resultado e evidência |
 |---|---|
@@ -27,11 +27,11 @@ Versões registradas: Windows, Node24.19.0/npm11.17.0, Docker29.7.2, PostgreSQL1
 - `git check-ignore`: configuração local, builds/caches, QA/snapshots/revisões ignorados; PDF/ZIP/índice e PNGs aprovados elegíveis para versionamento. Nenhuma remoção física.
 - `git diff --check` e integridade do inventário original conferidos na entrega. Nenhuma lógica de app, dependência, DB, ambiente, serviço ou remoto foi alterado nesta tarefa; apenas novo script de integridade/documentação e regras Git.
 
-## Ainda não executado / pendente
+## Limites e validações adicionais
 
-- Build/testes XCTest em macOS, simulator iOS, Android emulator, inspeção visual/interação nativa, rede host-emulador, aparelhos físicos e VoiceOver/TalkBack. Fonte iOS não é runtime validado. Títulos de conteúdo Bricolage implementados em fonte com escala acessível; runtime/inspeção visual nativa não verificados. Corpo e navegação do sistema podem manter fonte nativa conforme a identidade aprovada.
+- Build e XCTest macOS são acompanhados no CI do PR. Inspeção visual/interação nativa, Android emulator, rede host-emulador, aparelhos físicos e VoiceOver/TalkBack continuam pendentes. Fonte iOS não é runtime validado. Títulos de conteúdo Bricolage implementados em fonte com escala acessível; runtime/inspeção visual nativa não verificados. Corpo e navegação do sistema podem manter fonte nativa conforme a identidade aprovada.
 - Provedores reais, email/SMS, identity/RBAC, pagamentos/crédito, documentos oficiais, tracking ao vivo, sinistros, convites/importação e worker de recorrência. A [cobertura](coverage.md) mantém o escopo completo e a [matriz JSON](coverage.json) enumera cada lacuna original.
-- Workflow remoto, assinatura, publicação, merge/deploy. Leow4u/Fretenow tem ADMIN/push confirmado; acesso não é bloqueio atual. A existência de ci.yml não prova execução. O controlador deve preservar e reconciliar o commit inicial remoto antes de eventual envio autorizado, sem force push.
+- O código e o brandbook foram enviados ao PR autorizado, preservando o commit inicial remoto. Os jobs remotos são verificáveis nos links acima; configuração do workflow sozinha não prova sucesso. Assinatura, distribuição de aplicativos, merge e deploy não foram realizados.
 - Não existe script lint: nenhum resultado lint é alegado. O skip PostgreSQL de `npm test` sem DATABASE_URL é esperado e distinto de falha. O teste separado carrega `.env.local` e usa tenants temporários; não substitui nem apaga o banco demo.
 
 O workspace atual usa `docker start fretenow-postgres`; não execute o roteiro Compose de clone novo contra ele. Banco e credenciais locais foram preservados. API sempre loopback4100, Web3002, PostgreSQL55432. Android Debug usa10.0.2.2; iOS localhost requer API no mesmo Mac. Não houve exposição LAN/túnel. Relatórios ficam no repositório; APK, capturas, resultados de teste e QA local ficam no disco ignorado, ausentes em clones novos.
@@ -52,4 +52,4 @@ Android `assembleDebug` após fonte/tipografia: **BUILD SUCCESSFUL em 1m45s, 39 
 
 ### CI coverage note after final review
 
-Addressed in the GitHub packaging follow-up: `test:flow` now explicitly runs both `quote-attempt.test.ts` and `presentation.test.ts`. The existing CI step already invokes this script. `npm run test:flow --workspace=@fretenow/web` passed all **5 tests**, zero failures/skips, locally on2026-10-30. Remote CI has not run. See [Git handoff report](git-handoff-report.md) for attribute rules and byte-preservation checks; this changed test selection only, with no application logic/build/runtime change.
+Addressed in the GitHub packaging follow-up: `test:flow` now explicitly runs both `quote-attempt.test.ts` and `presentation.test.ts`. The existing CI step already invokes this script. `npm run test:flow --workspace=@fretenow/web` passed all **5 tests**, zero failures/skips, locally on2026-10-30. Remote results are tracked in PR #1 and its CI runs. See [Git handoff report](git-handoff-report.md) for attribute rules and byte-preservation checks; this changed test selection only, with no application logic/build/runtime change.

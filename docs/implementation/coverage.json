@@ -20,7 +20,7 @@
     "integrated": "Named action connected to local demo API; no real provider implied",
     "validated": "Only a specifically evidenced executed action/check, never inferred whole-module parity"
   },
-  "validationPolicy": "Status describes implementation scope. runtimeVerified never includes native UI: iOS source only; Android JVM/APK and JSON replay only. API and Web evidence is action-scoped; unknown/partial-page functions are not promoted by a build. Local outputs are ignored and may be absent from clones. Evidence reports are versionable.",
+  "validationPolicy": "Status describes implementation scope. Native runtimeVerified means product UI/network interoperability, not compilation or unit tests. The original local evidence covered iOS source and Android JVM/APK/JSON replay; subsequent remote builds/tests are tracked in PR #1 and GitHub Actions. API/Web evidence remains action-scoped; a build never promotes unknown or partial-page functions. Local outputs are ignored and may be absent from clones. Evidence reports are versionable historical records.",
   "modules": [
     {
       "id": "onboarding",
